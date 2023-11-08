@@ -206,7 +206,7 @@ function handleScroll() {
         logoWrapper.classList.add('opacity-zero');
         logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
     } else {
-        isScrolledToTop = currentScrollPos <= 50;
+        isScrolledToTop = currentScrollPos <= 20;
         if (isScrolledToTop) {
             logoWrapper.classList.remove('opacity-zero');
             logoWrapper.classList.add('expanded-after', 'place-header-after');
@@ -247,6 +247,7 @@ document.getElementById("sendButton").addEventListener('click', function(){
     const gameTypeSelected = gameTypeSelect.options[gameTypeSelect.selectedIndex];
 
     const data = {
+        id: generateRandomNumber(),
         vertical: getActiveSelectText("verticalSelect1"),
         geo: geoSelected.value,
         language: languageSelected.value,
@@ -269,3 +270,10 @@ document.getElementById("sendButton").addEventListener('click', function(){
 
 
 });
+
+function generateRandomNumber(){
+    const min = 10000000;
+    const max = 99999999;
+
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
