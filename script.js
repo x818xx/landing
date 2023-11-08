@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (currentScrollPos > previousScrollPos && !logoAnimationInProgress) {
                         isScrolledToTop = false;
                         logoWrapper.classList.add('opacity-zero');
-                        mode.classList.add('opacity-zero');
+                        mode.classList.remove('display');
                         logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
                     } else {
                         isScrolledToTop = currentScrollPos == 0;
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             if (!logoAnimationInProgress) {
                                 logoAnimationInProgress = true;
                                 logoWrapper.classList.remove('opacity-zero');
-                                mode.classList.remove('opacity-zero');
+                                mode.classList.add('display');
                                 logoWrapper.classList.add('expanded-after', 'place-header-after');
                             }
                         } else {
