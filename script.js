@@ -4,43 +4,15 @@ document.addEventListener("DOMContentLoaded", function () {
         logo.classList.add("expanded");
     }, 300);
 
-    setTimeout(() => {
-        logo.classList.add("place-header");
-        logo.addEventListener("transitionend", function (event) {
-            if (event.propertyName === "transform") {
-                document.getElementById("content").classList.add("display");
-                document.getElementById("mode-switch").classList.add("display");
-            }
-        });
-    }, 3000);
-
-    setTimeout(() => {
-        let isScrolledToTop = true;
-        let previousScrollPos = window.pageYOffset;
-
-        function handleScroll() {
-            const currentScrollPos = window.pageYOffset;
-
-            if (currentScrollPos > previousScrollPos) {
-                isScrolledToTop = false;
-                logoWrapper.classList.add('opacity-zero');
-                logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
-            } else {
-                isScrolledToTop = currentScrollPos <= 120;
-                if (isScrolledToTop) {
-                    logoWrapper.classList.remove('opacity-zero');
-                    logoWrapper.classList.add('expanded-after', 'place-header-after');
-                }
-            }
-
-            previousScrollPos = currentScrollPos;
-
-            window.requestAnimationFrame(handleScroll);
-        }
-
-        window.addEventListener('scroll', handleScroll);
-    }, 5000);
-
+    // setTimeout(() => {
+    //     logo.classList.add("place-header");
+    //     logo.addEventListener("transitionend", function (event) {
+    //         if (event.propertyName === "transform") {
+    //             document.getElementById("content").classList.add("display");
+    //             document.getElementById("mode-switch").classList.add("display");
+    //         }
+    //     });
+    // }, 3000);
 
 });
 
@@ -223,6 +195,29 @@ const logoWrapper = document.querySelector('.logo-wrapper');
 //     }
 // });
 
+let isScrolledToTop = true;
+let previousScrollPos = window.pageYOffset;
 
+function handleScroll() {
+    const currentScrollPos = window.pageYOffset;
+
+    if (currentScrollPos > previousScrollPos) {
+        isScrolledToTop = false;
+        logoWrapper.classList.add('opacity-zero');
+        logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
+    } else {
+        isScrolledToTop = currentScrollPos <= 120;
+        if (isScrolledToTop) {
+            logoWrapper.classList.remove('opacity-zero');
+            logoWrapper.classList.add('expanded-after', 'place-header-after');
+        }
+    }
+
+    previousScrollPos = currentScrollPos;
+
+    window.requestAnimationFrame(handleScroll);
+}
+
+window.addEventListener('scroll', handleScroll);
 
 
