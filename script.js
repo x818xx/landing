@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const logo = document.getElementById("logo");
+
     setTimeout(() => {
         logo.classList.add("expanded");
     }, 300);
@@ -10,10 +11,43 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.propertyName === "transform") {
                 document.getElementById("content").classList.add("display");
                 document.getElementById("mode-switch").classList.add("display");
+                const logoWrapper = document.querySelector('.logo-wrapper');
+
+                let isScrolledToTop = true;
+                let previousScrollPos = window.pageYOffset;
+
+                function handleScroll() {
+                    const currentScrollPos = window.pageYOffset;
+
+                    if (currentScrollPos > previousScrollPos) {
+                        isScrolledToTop = false;
+                        logoWrapper.classList.add('opacity-zero');
+                        logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
+                    } else {
+                        isScrolledToTop = currentScrollPos <= 20;
+                        if (isScrolledToTop) {
+                            logoWrapper.classList.remove('opacity-zero');
+                            logoWrapper.classList.add('expanded-after', 'place-header-after');
+                        }
+                    }
+
+                    previousScrollPos = currentScrollPos;
+
+                    window.requestAnimationFrame(handleScroll);
+                }
+
+                window.addEventListener('scroll', handleScroll);
             }
         });
     }, 3000);
 
+    var helpIcons = document.querySelectorAll('.help-icon');
+
+    helpIcons.forEach(function (helpIcon) {
+        helpIcon.addEventListener('click', function () {
+            openModal();
+        });
+    });
 });
 
 
@@ -92,17 +126,6 @@ function closeAllSelect(elmnt) {
 
 document.addEventListener("click", closeAllSelect);
 
-
-document.addEventListener('DOMContentLoaded', function () {
-    var helpIcons = document.querySelectorAll('.help-icon');
-
-    helpIcons.forEach(function (helpIcon) {
-        helpIcon.addEventListener('click', function () {
-            openModal();
-        });
-    });
-});
-
 function openModal() {
     document.getElementById('modal').style.display = 'block';
 }
@@ -173,58 +196,13 @@ document.getElementById('mode-switch').addEventListener('click', function () {
     }
 });
 
-const logoWrapper = document.querySelector('.logo-wrapper');
 
-// let isScrolledToTop = false;
 
-// window.addEventListener('scroll', () => {
-//     const currentScrollPos = window.pageYOffset;
-
-//     if (currentScrollPos === 0) {
-//         isScrolledToTop = true;
-//     } else {
-//         isScrolledToTop = false;
-//     }
-
-//     if (isScrolledToTop) {
-//         logoWrapper.classList.remove('opacity-zero');
-//         logoWrapper.classList.add('expanded-after', 'place-header-after');
-//     } else {
-//         logoWrapper.classList.add('opacity-zero');
-//         logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
-//     }
-// });
-
-let isScrolledToTop = true;
-let previousScrollPos = window.pageYOffset;
-
-function handleScroll() {
-    const currentScrollPos = window.pageYOffset;
-
-    if (currentScrollPos > previousScrollPos) {
-        isScrolledToTop = false;
-        logoWrapper.classList.add('opacity-zero');
-        logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
-    } else {
-        isScrolledToTop = currentScrollPos <= 20;
-        if (isScrolledToTop) {
-            logoWrapper.classList.remove('opacity-zero');
-            logoWrapper.classList.add('expanded-after', 'place-header-after');
-        }
-    }
-
-    previousScrollPos = currentScrollPos;
-
-    window.requestAnimationFrame(handleScroll);
-}
-
-window.addEventListener('scroll', handleScroll);
-
-function getActiveSelectText(elementID){
+function getActiveSelectText(elementID) {
     const wrapper = document.getElementById(elementID);
     const activeElement = wrapper.querySelector('.active');
-    
-    if(!activeElement){
+
+    if (!activeElement) {
         return;
     }
 
@@ -233,37 +211,125 @@ function getActiveSelectText(elementID){
     return input.value;
 }
 
-document.getElementById("sendButton").addEventListener('click', function(){
+document.getElementById("sendButton").addEventListener('click', function () {
+    const vertical = getActiveSelectText("verticalSelect1");
+    if (!vertical) {
+        alert('Choose a vertical !');
+        return;
+    }
+
     const geoSelect = document.getElementById("geoSelect2");
     const geoSelected = geoSelect.options[geoSelect.selectedIndex];
+    if (geoSelected.value == "0") {
+        alert('Choose a geo !');
+        return;
+    }
 
     const languageSelect = document.getElementById("languageSelect3");
     const languageSelected = languageSelect.options[languageSelect.selectedIndex];
+    if (languageSelected.value == "0") {
+        alert('Choose a language !');
+        return;
+    }
+
+    const traff = getActiveSelectText("traffSelect4");
+    if (!traff) {
+        alert('Choose a traff source !');
+        return;
+    }
+
+    const size = getActiveSelectText("sizeSelect5");
+    if (!size) {
+        alert('Choose a size !');
+        return;
+    }
+
+    const length = getActiveSelectText("lengthSelect6");
+    if (!length) {
+        alert('Choose a length !');
+        return;
+    }
 
     const themaSelect = document.getElementById("themaSelect7");
     const themaSelected = themaSelect.options[themaSelect.selectedIndex];
+    if (themaSelected.value == "0") {
+        alert('Choose a theme !');
+        return;
+    }
 
     const gameTypeSelect = document.getElementById("gameTypeSelect8");
     const gameTypeSelected = gameTypeSelect.options[gameTypeSelect.selectedIndex];
+    if (gameTypeSelected.value == "0") {
+        alert('Choose a game !');
+        return;
+    }
+
+    const os = getActiveSelectText("osSelect9");
+    if (!os) {
+        alert('Choose a OS !');
+        return;
+    }
+
+    const emotions = getActiveSelectText("emotionsSelect10");
+    if (!emotions) {
+        alert('Choose a emotions options !');
+        return;
+    }
+
+    const banking = getActiveSelectText("bankingSelect11");
+    if (!banking) {
+        alert('Choose a banking options !');
+        return;
+    }
+
+    const push_up = getActiveSelectText("pushUpSelect12");
+    if (!push_up) {
+        alert('Choose a Push Up options !');
+        return;
+    }
+
+    const app_name = document.getElementById("appNameInput13").value;
+    if (app_name.length < 3) {
+        alert("App name input is empty !");
+        return;
+    }
+
+    const deadline = getActiveSelectText("deadlineSelect14");
+    if (!deadline) {
+        alert('Choose a deadline !');
+        return;
+    }
+
+    const offer = document.getElementById("offerLinkInput15").value;
+    if (offer.length < 3) {
+        alert("Offer link input is empty !");
+        return;
+    }
+
+    const tg_username = document.getElementById("tgUsernameInput").value;
+    if (tg_username.length < 3) {
+        alert("TG Username input is empty !");
+        return;
+    }
 
     const data = {
         id: generateRandomNumber(),
-        vertical: getActiveSelectText("verticalSelect1"),
+        vertical: vertical,
         geo: geoSelected.value,
         language: languageSelected.value,
-        traff: getActiveSelectText("traffSelect4"),
-        size: getActiveSelectText("sizeSelect5"),
-        length: getActiveSelectText("lengthSelect6"),
+        traff: traff,
+        size: size,
+        length: length,
         thema: themaSelected.value,
         game: gameTypeSelected.value,
-        os: getActiveSelectText("osSelect9"),
-        emotions: getActiveSelectText("emotionsSelect10"),
-        banking: getActiveSelectText("bankingSelect11"),
-        push_up: getActiveSelectText("pushUpSelect12"),
-        app_name: document.getElementById("appNameInput13").value,
-        deadline: getActiveSelectText("deadlineSelect14"),
-        offer: document.getElementById("offerLinkInput15").value,
-        tg_username: document.getElementById("tgUsernameInput").value,
+        os: os,
+        emotions: emotions,
+        banking: banking,
+        push_up: push_up,
+        app_name: app_name,
+        deadline: deadline,
+        offer: offer,
+        tg_username: tg_username
     }
 
     console.log(data);
@@ -271,7 +337,7 @@ document.getElementById("sendButton").addEventListener('click', function(){
 
 });
 
-function generateRandomNumber(){
+function generateRandomNumber() {
     const min = 10000000;
     const max = 99999999;
 
