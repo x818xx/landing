@@ -16,24 +16,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 let isScrolledToTop = true;
                 let previousScrollPos = window.pageYOffset;
                 let logoAnimationInProgress = false;
+                let animationTimeout;
 
                 function handleScroll() {
                     const currentScrollPos = window.pageYOffset;
 
                     if (currentScrollPos > previousScrollPos && !logoAnimationInProgress) {
-                        isScrolledToTop = false;
-                        logoWrapper.classList.add('opacity-zero');
-                        logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
-                    } else {
-                        isScrolledToTop = currentScrollPos <= 20;
-                        if (isScrolledToTop) {
-                            if (!logoAnimationInProgress) {
+                        if (currentScrollPos <= 20) {
+                            isScrolledToTop = true;
+                        } else {
+                            isScrolledToTop = false;
+                            logoWrapper.classList.add('opacity-zero');
+                            logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
+                        }
+                    } else if (!logoAnimationInProgress) {
+                        if (currentScrollPos <= 20) {
+                            isScrolledToTop = true;
+                            // Запуск анімації з затримкою
+                            animationTimeout = setTimeout(() => {
                                 logoAnimationInProgress = true;
                                 logoWrapper.classList.remove('opacity-zero');
                                 logoWrapper.classList.add('expanded-after', 'place-header-after');
-                            }
-                        } else {
-                            logoAnimationInProgress = false;
+                            }, 300); // Затримка 300 мілісекунд
                         }
                     }
 
