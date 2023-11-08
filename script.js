@@ -4,15 +4,15 @@ document.addEventListener("DOMContentLoaded", function () {
         logo.classList.add("expanded");
     }, 300);
 
-    // setTimeout(() => {
-    //     logo.classList.add("place-header");
-    //     logo.addEventListener("transitionend", function (event) {
-    //         if (event.propertyName === "transform") {
-    //             document.getElementById("content").classList.add("display");
-    //             document.getElementById("mode-switch").classList.add("display");
-    //         }
-    //     });
-    // }, 3000);
+    setTimeout(() => {
+        logo.classList.add("place-header");
+        logo.addEventListener("transitionend", function (event) {
+            if (event.propertyName === "transform") {
+                document.getElementById("content").classList.add("display");
+                document.getElementById("mode-switch").classList.add("display");
+            }
+        });
+    }, 3000);
 
 });
 
