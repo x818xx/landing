@@ -1,55 +1,144 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Marmelad&display=swap');
 
-/* body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Marmelad', sans-serif;
-  position: relative;
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Marmelad', sans-serif;
+    position: fixed;
+    background-image: url('black-background.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: brightness(70%);
+    /* z-index: -1; */
+    background-attachment: fixed;
+  }
+  
+  /* TWO PARTS */
+  .form {
+    display: flex;
+  }
+  
+  .form-container {
+    padding: 20px;
+    box-sizing: border-box;
+    width: 50%;
+  }
+  
+  .logo-position {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  
+  .logo-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) scale(0.1);
+    transition: transform 2s;
+  }
+  
+  .logo-wrapper img {
+    height: 55vh;
+  }
+  
+  .logo-wrapper.expanded {
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 2s;
+  }
+  
+  .logo-wrapper.expanded.place-header {
+    transform: translate(-50%, -125%) scale(0.3);
+  }
+  
+  .logo-wrapper.expanded-after {
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0s;
+  }
+  
+  .logo-wrapper.expanded-after.place-header-after {
+    transform: translate(-50%, -125%) scale(0.3);
+  }
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('black-background.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  filter: brightness(50%);
-  z-index: -1;
-} */
 
-body {
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-family: 'Marmelad', sans-serif;
-  position: fixed;
-  background-image: url('black-background.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  filter: brightness(70%);
-  /* z-index: -1; */
-  background-attachment: fixed;
-}
 
-/* TWO PARTS */
-.form {
-  display: flex;
-}
+@media screen and (max-width: 767px) {
+  body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Marmelad', sans-serif;
+    position: relative;
+    background-image: url('black-background.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: brightness(70%);
+    /* z-index: -1; */
+    background-attachment: fixed;
+    font-size: 10px;
+  }
 
-.form-container {
-  padding: 20px;
-  box-sizing: border-box;
-  width: 50%;
+  .form {
+    display: block;
+  }
+
+  .form-container {
+    padding: 20px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .logo-position {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  .logo-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 2s;
+  }
+
+  .logo-wrapper img {
+    height: 45vh;
+  }
+
+  .logo-wrapper.expanded {
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 2s;
+  }
+
+  .logo-wrapper.expanded.place-header {
+    transform: translate(-50%, -125%) scale(0.3);
+  }
+
+  .logo-wrapper.expanded-after {
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0s;
+  }
+
+  .logo-wrapper.expanded-after.place-header-after {
+    transform: translate(-50%, -125%) scale(0.3);
+  }
 }
 
 .mode-switch {
@@ -72,48 +161,6 @@ body {
 
 .mode-switch.display {
   opacity: 1;
-}
-
-.logo-position {
-  position: fixed;
-  top: 0;
-  right: 0;
-}
-
-.logo-wrapper {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform-origin: center;
-  transform: translate(-50%, -50%) scale(0.1);
-  transition: transform 2s;
-}
-
-.logo-wrapper img {
-  height: 55vh;
-}
-
-.logo-wrapper.expanded {
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 2s;
-}
-
-.logo-wrapper.expanded.place-header {
-  transform: translate(-50%, -125%) scale(0.3);
-}
-
-/* .logo-wrapper.expanded.place-header.header-top {
-  transform: translate(-50%, -135%) scale(0.3);
-  transition: transform 0s;
-} */
-
-.logo-wrapper.expanded-after {
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 0s;
-}
-
-.logo-wrapper.expanded-after.place-header-after {
-  transform: translate(-50%, -125%) scale(0.3);
 }
 
 .opacity-zero {
@@ -548,40 +595,6 @@ body {
 
 
 @media screen and (max-width: 767px) {
-  body {
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Marmelad', sans-serif;
-    position: relative;
-    background-image: url('black-background.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    filter: brightness(70%);
-    /* z-index: -1; */
-    background-attachment: fixed;
-  }
-
-  body {
-    font-size: 10px;
-  }
-
-  .form {
-    display: block;
-  }
-
-  .form-container {
-    padding: 20px;
-    padding-bottom: 0px;
-    padding-top: 0px;
-    box-sizing: border-box;
-    width: 100%;
-  }
-
   .span-small {
     font-size: 8px;
   }
@@ -620,42 +633,6 @@ body {
   .help-icon {
     margin-left: 2px;
     cursor: pointer;
-  }
-
-  .logo-wrapper {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform-origin: center;
-    transform: translate(-50%, -50%) scale(0);
-    transition: transform 2s;
-  }
-
-  .logo-wrapper img {
-    height: 45vh;
-  }
-
-  .logo-wrapper.expanded {
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 2s;
-  }
-
-  .logo-wrapper.expanded.place-header {
-    transform: translate(-50%, -125%) scale(0.3);
-  }
-
-  .logo-wrapper.expanded.place-header.header-top {
-    transform: translate(-50%, -125%) scale(0.3);
-    transition: transform 0s;
-  }
-
-  .logo-wrapper.expanded-after {
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 0s;
-  }
-
-  .logo-wrapper.expanded-after.place-header-after {
-    transform: translate(-50%, -125%) scale(0.3);
   }
 
   .content {
