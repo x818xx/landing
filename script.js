@@ -15,19 +15,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 let isScrolledToTop = true;
                 let previousScrollPos = window.pageYOffset;
+                let logoAnimationInProgress = false;
 
                 function handleScroll() {
                     const currentScrollPos = window.pageYOffset;
 
-                    if (currentScrollPos > previousScrollPos) {
+                    if (currentScrollPos > previousScrollPos && !logoAnimationInProgress) {
                         isScrolledToTop = false;
                         logoWrapper.classList.add('opacity-zero');
                         logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
                     } else {
                         isScrolledToTop = currentScrollPos <= 20;
                         if (isScrolledToTop) {
-                            logoWrapper.classList.remove('opacity-zero');
-                            logoWrapper.classList.add('expanded-after', 'place-header-after');
+                            if (!logoAnimationInProgress) {
+                                logoAnimationInProgress = true;
+                                logoWrapper.classList.remove('opacity-zero');
+                                logoWrapper.classList.add('expanded-after', 'place-header-after');
+                            }
+                        } else {
+                            logoAnimationInProgress = false;
                         }
                     }
 
