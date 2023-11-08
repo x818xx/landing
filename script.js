@@ -206,7 +206,7 @@ function handleScroll() {
         logoWrapper.classList.add('opacity-zero');
         logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
     } else {
-        isScrolledToTop = currentScrollPos <= 120;
+        isScrolledToTop = currentScrollPos <= 50;
         if (isScrolledToTop) {
             logoWrapper.classList.remove('opacity-zero');
             logoWrapper.classList.add('expanded-after', 'place-header-after');
@@ -234,5 +234,38 @@ function getActiveSelectText(elementID){
 }
 
 document.getElementById("sendButton").addEventListener('click', function(){
+    const geoSelect = document.getElementById("geoSelect2");
+    const geoSelected = geoSelect.options[geoSelect.selectedIndex];
 
-})
+    const languageSelect = document.getElementById("languageSelect3");
+    const languageSelected = languageSelect.options[languageSelect.selectedIndex];
+
+    const themaSelect = document.getElementById("themaSelect7");
+    const themaSelected = themaSelect.options[themaSelect.selectedIndex];
+
+    const gameTypeSelect = document.getElementById("gameTypeSelect8");
+    const gameTypeSelected = gameTypeSelect.options[gameTypeSelect.selectedIndex];
+
+    const data = {
+        vertical: getActiveSelectText("verticalSelect1"),
+        geo: geoSelected.value,
+        language: languageSelected.value,
+        traff: getActiveSelectText("traffSelect4"),
+        size: getActiveSelectText("sizeSelect5"),
+        length: getActiveSelectText("lengthSelect6"),
+        thema: themaSelected.value,
+        game: gameTypeSelected.value,
+        os: getActiveSelectText("osSelect9"),
+        emotions: getActiveSelectText("emotionsSelect10"),
+        banking: getActiveSelectText("bankingSelect11"),
+        push_up: getActiveSelectText("pushUpSelect12"),
+        app_name: document.getElementById("appNameInput13").value,
+        deadline: getActiveSelectText("deadlineSelect14"),
+        offer: document.getElementById("offerLinkInput15").value,
+        tg_username: document.getElementById("tgUsernameInput").value,
+    }
+
+    console.log(data);
+
+
+});

@@ -637,7 +637,7 @@ body {
   }
 
   .content {
-    margin-top: 75px;
+    margin-top: 150px;
     opacity: 0;
     transition: opacity 1.5s ease;
     /* display: flex; */
