@@ -24,13 +24,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (currentScrollPos > previousScrollPos && !logoAnimationInProgress) {
                         isScrolledToTop = false;
                         logoWrapper.classList.add('opacity-zero');
+                        mode.classList.add('opacity-zero');
                         logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
                     } else {
-                        isScrolledToTop = currentScrollPos <= 20;
+                        isScrolledToTop = currentScrollPos == 0;
                         if (isScrolledToTop) {
                             if (!logoAnimationInProgress) {
                                 logoAnimationInProgress = true;
                                 logoWrapper.classList.remove('opacity-zero');
+                                mode.classList.remove('opacity-zero');
                                 logoWrapper.classList.add('expanded-after', 'place-header-after');
                             }
                         } else {
