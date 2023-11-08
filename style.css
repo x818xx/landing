@@ -19,24 +19,24 @@
     /* z-index: -1; */
     background-attachment: fixed;
   }
-  
+
   /* TWO PARTS */
   .form {
     display: flex;
   }
-  
+
   .form-container {
     padding: 20px;
     box-sizing: border-box;
     width: 50%;
   }
-  
+
   .logo-position {
     position: fixed;
     top: 0;
     right: 0;
   }
-  
+
   .logo-wrapper {
     position: fixed;
     top: 50%;
@@ -45,25 +45,25 @@
     transform: translate(-50%, -50%) scale(0.1);
     transition: transform 2s;
   }
-  
+
   .logo-wrapper img {
     height: 55vh;
   }
-  
+
   .logo-wrapper.expanded {
     transform: translate(-50%, -50%) scale(1);
     transition: transform 2s;
   }
-  
+
   .logo-wrapper.expanded.place-header {
     transform: translate(-50%, -125%) scale(0.3);
   }
-  
+
   .logo-wrapper.expanded-after {
     transform: translate(-50%, -50%) scale(1);
     transition: transform 0s;
   }
-  
+
   .logo-wrapper.expanded-after.place-header-after {
     transform: translate(-50%, -125%) scale(0.3);
   }
@@ -618,6 +618,17 @@
     width: 80%;
     position: relative;
     font-family: 'Marmelad', sans-serif;
+  }
+
+  .select-items {
+    position: absolute;
+    background: rgba(128, 128, 128, 0.8);
+    top: 70%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
 
   .select-right {
