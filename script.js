@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const logo = document.getElementById("logo");
+    const mode = document.getElementById("mode-switch");
 
     setTimeout(() => {
         logo.classList.add("expanded");
@@ -15,29 +16,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 let isScrolledToTop = true;
                 let previousScrollPos = window.pageYOffset;
-                let logoAnimationInProgress = false;
-                let animationTimeout;
 
                 function handleScroll() {
                     const currentScrollPos = window.pageYOffset;
 
-                    if (currentScrollPos > previousScrollPos && !logoAnimationInProgress) {
-                        if (currentScrollPos <= 20) {
-                            isScrolledToTop = true;
-                        } else {
-                            isScrolledToTop = false;
-                            logoWrapper.classList.add('opacity-zero');
-                            logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
-                        }
-                    } else if (!logoAnimationInProgress) {
-                        if (currentScrollPos <= 20) {
-                            isScrolledToTop = true;
-                            // Запуск анімації з затримкою
-                            animationTimeout = setTimeout(() => {
-                                logoAnimationInProgress = true;
-                                logoWrapper.classList.remove('opacity-zero');
-                                logoWrapper.classList.add('expanded-after', 'place-header-after');
-                            }, 300); // Затримка 300 мілісекунд
+                    if (currentScrollPos > previousScrollPos) {
+                        isScrolledToTop = false;
+                        logoWrapper.classList.add('opacity-zero');
+                        mode.classList.add('opacity-zero');
+                        logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
+                    } else {
+                        isScrolledToTop = currentScrollPos <= 20;
+                        if (isScrolledToTop) {
+                            logoWrapper.classList.remove('opacity-zero');
+                            mode.classList.remove('opacity-zero');
+                            logoWrapper.classList.add('expanded-after', 'place-header-after');
                         }
                     }
 
@@ -324,6 +317,7 @@ document.getElementById("sendButton").addEventListener('click', function () {
 
     const data = {
         id: generateRandomNumber(),
+        time: getFormattedTimeWithTimeZone(),
         vertical: vertical,
         geo: geoSelected.value,
         language: languageSelected.value,
@@ -344,6 +338,13 @@ document.getElementById("sendButton").addEventListener('click', function () {
 
     console.log(data);
 
+    axios.post('/order.php', data)
+        .then((response) => {
+            alert("Ваше замовлення успішно отримане !");
+        })
+        .catch((error) => {
+            window.location.reload();
+        });
 
 });
 
@@ -352,4 +353,25 @@ function generateRandomNumber() {
     const max = 99999999;
 
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getFormattedTimeWithTimeZone() {
+    const userTimezone = 'Europe/Sofia';
+
+    const now = new Date();
+
+    const userTime = new Date(now.toLocaleString('en-US', { timeZone: userTimezone }));
+
+    const formattedTime = userTime.toLocaleString('en-US', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+        timeZoneName: 'short',
+    }).replace(/(\d+)\/(\d+)\/(\d+), (\d+:\d+:\d+) (AM|PM)/, '$2/$1/$3 $4');
+
+    return formattedTime;
 }
