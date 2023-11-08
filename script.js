@@ -220,4 +220,19 @@ function handleScroll() {
 
 window.addEventListener('scroll', handleScroll);
 
+function getActiveSelectText(elementID){
+    const wrapper = document.getElementById(elementID);
+    const activeElement = wrapper.querySelector('.active');
+    
+    if(!activeElement){
+        return;
+    }
 
+    const input = activeElement.querySelector('.input');
+
+    return input.value;
+}
+
+document.getElementById("sendButton").addEventListener('click', function(){
+
+})
