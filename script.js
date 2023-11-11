@@ -62,6 +62,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const logo = document.getElementById("logo");
     const logoPosition = document.getElementById("logo-position");
+    const logoWrapper = document.querySelector('.logo-wrapper');
     const mode = document.getElementById("mode-switch");
 
     setTimeout(() => {
@@ -76,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 logoWrapper.style.position = 'absolute';
                 document.getElementById("content").classList.add("display");
                 document.getElementById("mode-switch").classList.add("display");
-                const logoWrapper = document.querySelector('.logo-wrapper');
             }
         });
     }, 3000);
