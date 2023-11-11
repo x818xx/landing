@@ -104,10 +104,11 @@
 
   .logo-position {
     position: relative;
-    height: 100vh; /* Add this line to make sure the logo is centered vertically */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden; /* Add this to hide the overflow */
   }
 
   .logo-wrapper {
@@ -124,21 +125,21 @@
   }
 
   .logo-wrapper.expanded {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -100%) scale(1); /* Change -50% to -100% */
     transition: transform 2s;
   }
 
   .logo-wrapper.expanded.place-header {
-    transform: translate(-50%, 0%) scale(0.3);
+    transform: translate(-50%, -150%) scale(0.3); /* Change 0% to -150% */
   }
 
   .logo-wrapper.expanded-after {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -100%) scale(1); /* Change -50% to -100% */
     transition: transform 0s;
   }
 
   .logo-wrapper.expanded-after.place-header-after {
-    transform: translate(-50%, 0%) scale(0.3);
+    transform: translate(-50%, -150%) scale(0.3); /* Change 0% to -150% */
   }
 }
 
