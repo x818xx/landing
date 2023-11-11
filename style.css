@@ -130,7 +130,7 @@
   }
 
   .logo-wrapper.expanded.place-header {
-    transform: translate(-50%, -150%) scale(0.3); /* Change 0% to -150% */
+    transform: translate(-50%, -125%) scale(0.3); /* Change 0% to -150% */
   }
 
   .logo-wrapper.expanded-after {
