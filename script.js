@@ -61,6 +61,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     const logo = document.getElementById("logo");
+    const logoPosition = document.getElementById("logo-position");
     const mode = document.getElementById("mode-switch");
 
     setTimeout(() => {
@@ -71,14 +72,11 @@ document.addEventListener("DOMContentLoaded", function () {
         logo.classList.add("place-header");
         logo.addEventListener("transitionend", function (event) {
             if (event.propertyName === "transform") {
+                logoPosition.style.height = 'height: 13.5vh'
+                logoWrapper.style.position = 'absolute';
                 document.getElementById("content").classList.add("display");
                 document.getElementById("mode-switch").classList.add("display");
                 const logoWrapper = document.querySelector('.logo-wrapper');
-                // logoWrapper.style.position = 'relative';
-                logoWrapper.style.position = 'absolute';
-                // window.addEventListener('scroll', () => {
-                //     logoWrapper.style.position = 'absolute';
-                // });
             }
         });
     }, 3000);

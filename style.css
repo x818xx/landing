@@ -130,17 +130,17 @@
   }
 
   .logo-wrapper.expanded.place-header {
-    transform: translate(-50%, -125%) scale(0.3); /* Change 0% to -150% */
+    transform: translate(-50%, -137.5%) scale(0.3); /* Change 0% to -150% */
   }
 
-  .logo-wrapper.expanded-after {
-    transform: translate(-50%, -100%) scale(1); /* Change -50% to -100% */
+  /* .logo-wrapper.expanded-after {
+    transform: translate(-50%, -100%) scale(1)
     transition: transform 0s;
   }
 
   .logo-wrapper.expanded-after.place-header-after {
-    transform: translate(-50%, -150%) scale(0.3); /* Change 0% to -150% */
-  }
+    transform: translate(-50%, -150%) scale(0.3);
+  } */
 }
 
 .mode-switch {
