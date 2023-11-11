@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         logo.classList.add("place-header");
         logo.addEventListener("transitionend", function (event) {
             if (event.propertyName === "transform") {
-                logoPosition.style.height = 'height: 13.5vh'
+                logoPosition.style.height = '13.5vh'
                 logoWrapper.style.position = 'absolute';
                 document.getElementById("content").classList.add("display");
                 document.getElementById("mode-switch").classList.add("display");
