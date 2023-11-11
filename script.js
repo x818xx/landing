@@ -1,3 +1,64 @@
+// document.addEventListener("DOMContentLoaded", function () {
+//     const logo = document.getElementById("logo");
+//     const mode = document.getElementById("mode-switch");
+
+//     setTimeout(() => {
+//         logo.classList.add("expanded");
+//     }, 300);
+
+//     setTimeout(() => {
+//         logo.classList.add("place-header");
+//         logo.addEventListener("transitionend", function (event) {
+//             if (event.propertyName === "transform") {
+//                 document.getElementById("content").classList.add("display");
+//                 document.getElementById("mode-switch").classList.add("display");
+//                 const logoWrapper = document.querySelector('.logo-wrapper');
+
+//                 let isScrolledToTop = true;
+//                 let previousScrollPos = window.pageYOffset;
+//                 let logoAnimationInProgress = false;
+
+//                 function handleScroll() {
+//                     const currentScrollPos = window.pageYOffset;
+
+//                     if (currentScrollPos > previousScrollPos && !logoAnimationInProgress) {
+//                         isScrolledToTop = false;
+//                         logoWrapper.classList.add('opacity-zero');
+//                         mode.classList.remove('display');
+//                         logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
+//                     } else {
+//                         isScrolledToTop = currentScrollPos == 0;
+//                         if (isScrolledToTop) {
+//                             if (!logoAnimationInProgress) {
+//                                 logoAnimationInProgress = true;
+//                                 logoWrapper.classList.remove('opacity-zero');
+//                                 mode.classList.add('display');
+//                                 logoWrapper.classList.add('expanded-after', 'place-header-after');
+//                             }
+//                         } else {
+//                             logoAnimationInProgress = false;
+//                         }
+//                     }
+
+//                     previousScrollPos = currentScrollPos;
+
+//                     window.requestAnimationFrame(handleScroll);
+//                 }
+
+//                 window.addEventListener('scroll', handleScroll);
+//             }
+//         });
+//     }, 3000);
+
+//     var helpIcons = document.querySelectorAll('.help-icon');
+
+//     helpIcons.forEach(function (helpIcon) {
+//         helpIcon.addEventListener('click', function () {
+//             openModal();
+//         });
+//     });
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
     const logo = document.getElementById("logo");
     const mode = document.getElementById("mode-switch");
@@ -13,52 +74,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("content").classList.add("display");
                 document.getElementById("mode-switch").classList.add("display");
                 const logoWrapper = document.querySelector('.logo-wrapper');
-
-                let isScrolledToTop = true;
-                let previousScrollPos = window.pageYOffset;
-                let logoAnimationInProgress = false;
-
-                function handleScroll() {
-                    const currentScrollPos = window.pageYOffset;
-
-                    if (currentScrollPos > previousScrollPos && !logoAnimationInProgress) {
-                        isScrolledToTop = false;
-                        logoWrapper.classList.add('opacity-zero');
-                        mode.classList.remove('display');
-                        logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
-                    } else {
-                        isScrolledToTop = currentScrollPos == 0;
-                        if (isScrolledToTop) {
-                            if (!logoAnimationInProgress) {
-                                logoAnimationInProgress = true;
-                                logoWrapper.classList.remove('opacity-zero');
-                                mode.classList.add('display');
-                                logoWrapper.classList.add('expanded-after', 'place-header-after');
-                            }
-                        } else {
-                            logoAnimationInProgress = false;
-                        }
-                    }
-
-                    previousScrollPos = currentScrollPos;
-
-                    window.requestAnimationFrame(handleScroll);
-                }
-
-                window.addEventListener('scroll', handleScroll);
+                logoWrapper.style.position = 'relative'; // Change to relative positioning
+                window.addEventListener('scroll', () => {
+                    logoWrapper.style.position = 'absolute'; // Change to absolute positioning on scroll
+                });
             }
         });
     }, 3000);
-
-    var helpIcons = document.querySelectorAll('.help-icon');
-
-    helpIcons.forEach(function (helpIcon) {
-        helpIcon.addEventListener('click', function () {
-            openModal();
-        });
-    });
 });
-
 
 var x, i, j, l, ll, selElmnt, a, b, c;
 x = document.getElementsByClassName("custom-select");

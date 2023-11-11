@@ -86,7 +86,6 @@
     background-position: center center;
     background-repeat: no-repeat;
     filter: brightness(70%);
-    /* z-index: -1; */
     background-attachment: fixed;
     font-size: 10px;
   }
@@ -104,13 +103,13 @@
   }
 
   .logo-position {
-    position: fixed;
-    top: 0;
-    right: 0;
+    position: relative;
+    /* Change fixed to relative */
   }
 
   .logo-wrapper {
-    position: fixed;
+    position: absolute;
+    /* Change fixed to absolute */
     top: 50%;
     left: 50%;
     transform-origin: center;
