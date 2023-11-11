@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("content").classList.add("display");
                 document.getElementById("mode-switch").classList.add("display");
                 const logoWrapper = document.querySelector('.logo-wrapper');
-                logoWrapper.style.position = 'relative'; // Change to relative positioning
+                logoWrapper.style.position = 'relative';
                 window.addEventListener('scroll', () => {
-                    logoWrapper.style.position = 'absolute'; // Change to absolute positioning on scroll
+                    logoWrapper.style.position = 'absolute';
                 });
             }
         });

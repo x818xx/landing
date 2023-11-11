@@ -104,12 +104,14 @@
 
   .logo-position {
     position: relative;
-    /* Change fixed to relative */
+    height: 100vh; /* Add this line to make sure the logo is centered vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .logo-wrapper {
     position: absolute;
-    /* Change fixed to absolute */
     top: 50%;
     left: 50%;
     transform-origin: center;
@@ -127,7 +129,7 @@
   }
 
   .logo-wrapper.expanded.place-header {
-    transform: translate(-50%, -125%) scale(0.3);
+    transform: translate(-50%, 0%) scale(0.3);
   }
 
   .logo-wrapper.expanded-after {
@@ -136,7 +138,7 @@
   }
 
   .logo-wrapper.expanded-after.place-header-after {
-    transform: translate(-50%, -125%) scale(0.3);
+    transform: translate(-50%, 0%) scale(0.3);
   }
 }
 
