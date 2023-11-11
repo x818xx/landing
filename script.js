@@ -73,9 +73,10 @@ document.addEventListener("DOMContentLoaded", function () {
         logo.classList.add("place-header");
         logo.addEventListener("transitionend", function (event) {
             if (event.propertyName === "transform") {
-                logoPosition.style.height = '13.5vh'
+                logoWrapper.classList.add("fix-position");
+                logoPosition.style.height = '15vh';
                 document.getElementById("content").classList.add("display");
-                document.getElementById("mode-switch").classList.add("display");
+                mode.classList.add("display");
                 logoWrapper.style.position = 'absolute';
             }
         });
