@@ -74,8 +74,9 @@ document.addEventListener("DOMContentLoaded", function () {
         logo.addEventListener("transitionend", function (event) {
             if (event.propertyName === "transform") {
                 logoWrapper.classList.add("fix-position");
-                logoPosition.style.height = '15vh';
+                logoPosition.style.height = '16vh';
                 document.getElementById("content").classList.add("display");
+                document.getElementById("language-select").classList.add("display");
                 mode.classList.add("display");
                 logoWrapper.style.position = 'absolute';
             }
@@ -154,6 +155,9 @@ function closeAllSelect(elmnt) {
             x[i].classList.add("select-hide");
         }
     }
+
+    console.log("pashol nahuy");
+    document.querySelector('.top-lang-btn').classList.remove('active');
 }
 
 document.addEventListener("click", closeAllSelect);
@@ -228,7 +232,36 @@ document.getElementById('mode-switch').addEventListener('click', function () {
     }
 });
 
+document.querySelector('.top-lang').addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var langBtn = this;
+    var langItems = document.querySelector('.top-lang-items');
 
+    if (!langBtn.classList.contains('active')) {
+        langBtn.classList.add('active');
+        langItems.style.display = 'block';
+        langItems.style.width = '185px';
+        langItems.style.left = '0px';
+
+        window.addEventListener('click', function closeLangDropdown() {
+            langBtn.classList.remove('active');
+            langItems.style.width = '0px';
+            window.removeEventListener('click', closeLangDropdown);
+        });
+    } else {
+        langBtn.classList.remove('active');
+        langItems.style.width = '0px';
+    }
+});
+
+
+document.querySelectorAll('.top-lang-items .item').forEach(function (item) {
+    item.addEventListener('click', function (e) {
+        document.querySelector('.top-lang-btn').classList.remove('active');
+        document.querySelector('.top-lang-items').style.width = '0px';
+    });
+});
 
 function getActiveSelectText(elementID) {
     const wrapper = document.getElementById(elementID);
