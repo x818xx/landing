@@ -184,8 +184,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black; /* Замініть на ваш колір */
-    z-index: -1; /* Забезпечує, що цей елемент буде позаду основного вмісту */
+    background: linear-gradient(to bottom, #111111, #333333);
+    /* Замініть на ваш колір */
+    z-index: -1;
+    /* Забезпечує, що цей елемент буде позаду основного вмісту */
   }
 
   .form {
@@ -857,7 +859,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
   }
 
   .send-button {
