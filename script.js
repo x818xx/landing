@@ -59,6 +59,10 @@
 //     });
 // });
 
+function getWindowWidth() {
+    return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     const logo = document.getElementById("logo");
     const logoPosition = document.getElementById("logo-position");
@@ -73,8 +77,12 @@ document.addEventListener("DOMContentLoaded", function () {
         logo.classList.add("place-header");
         logo.addEventListener("transitionend", function (event) {
             if (event.propertyName === "transform") {
-                logoWrapper.classList.add("fix-position");
-                logoPosition.style.height = '16vh';
+                if (getWindowWidth() < 768) {
+                    logoWrapper.classList.add("fix-position");
+                    logoPosition.style.height = '18vh';
+                } else {
+                    logoPosition.style.height = '16vh';
+                }
                 document.getElementById("content").classList.add("display");
                 document.getElementById("language-select").classList.add("display");
                 mode.classList.add("display");
@@ -83,6 +91,36 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, 3000);
 });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const logo = document.getElementById("logo");
+//     const logoPosition = document.getElementById("logo-position");
+//     const logoWrapper = document.querySelector('.logo-wrapper');
+//     const mode = document.getElementById("mode-switch");
+
+//     setTimeout(() => {
+//         logo.classList.add("expanded");
+//     }, 300);
+
+//     setTimeout(() => {
+//         logo.classList.add("place-header");
+//         logo.addEventListener("transitionend", function (event) {
+//             if (event.propertyName === "transform") {
+//                 //   logoWrapper.classList.add("fix-position");
+//                 logoPosition.style.height = '16vh';
+//                 document.getElementById("content").classList.add("display");
+//                 document.getElementById("language-select").classList.add("display");
+//                 mode.classList.add("display");
+
+//                 // logoWrapper.style.position = 'absolute';
+//                 // logoWrapper.style.left = '50%';
+//                 // logoWrapper.style.transform = 'translateX(-50%) scale(0.3)';
+//                 // logoWrapper.style.transition = `transform 0s`;
+//             }
+//         });
+//     }, 3000);
+// });
+
 
 var x, i, j, l, ll, selElmnt, a, b, c;
 x = document.getElementsByClassName("custom-select");
@@ -157,10 +195,11 @@ function closeAllSelect(elmnt) {
     }
 
     console.log("pashol nahuy");
-    document.querySelector('.top-lang-btn').classList.remove('active');
-}
 
-document.addEventListener("click", closeAllSelect);
+    document.querySelector('.top-lang').classList.remove('active');
+    document.querySelector('.top-lang-items').style.width = '0px';
+    // document.querySelector('.top-lang-btn').classList.remove('active');
+}
 
 function openModal() {
     document.getElementById('modal').style.display = 'block';
@@ -176,6 +215,8 @@ window.onclick = function (event) {
     if (event.target === modal || event.target === closeBtn) {
         closeModal();
     }
+
+    closeAllSelect();
 };
 
 function changeColor(inputElement) {
@@ -237,24 +278,30 @@ document.querySelector('.top-lang').addEventListener('click', function (e) {
     e.stopPropagation();
     var langBtn = this;
     var langItems = document.querySelector('.top-lang-items');
+    console.log("PASHOL NAHUY FIRST");
 
     if (!langBtn.classList.contains('active')) {
+        console.log("PASHOL NAHUY");
         langBtn.classList.add('active');
         langItems.style.display = 'block';
-        langItems.style.width = '185px';
+        if (getWindowWidth() < 768) {
+            langItems.style.width = '110px';
+        } else {
+            langItems.style.width = '185px';
+        }
+
         langItems.style.left = '0px';
 
-        window.addEventListener('click', function closeLangDropdown() {
-            langBtn.classList.remove('active');
-            langItems.style.width = '0px';
-            window.removeEventListener('click', closeLangDropdown);
-        });
+        // document.addEventListener('click', function closeLangDropdown() {
+        //     langBtn.classList.remove('active');
+        //     langItems.style.width = '0px';
+        //     document.removeEventListener('click', closeLangDropdown);
+        // });
     } else {
         langBtn.classList.remove('active');
         langItems.style.width = '0px';
     }
 });
-
 
 document.querySelectorAll('.top-lang-items .item').forEach(function (item) {
     item.addEventListener('click', function (e) {
@@ -262,6 +309,7 @@ document.querySelectorAll('.top-lang-items .item').forEach(function (item) {
         document.querySelector('.top-lang-items').style.width = '0px';
     });
 });
+
 
 function getActiveSelectText(elementID) {
     const wrapper = document.getElementById(elementID);
