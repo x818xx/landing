@@ -134,10 +134,15 @@ function closeModal() {
 }
 
 window.onclick = function (event) {
+    var lang = document.getElementById("langSelect");
     var modal = document.getElementById('modal');
     var closeBtn = document.querySelector('.close');
     if (event.target === modal || event.target === closeBtn) {
         closeModal();
+    }
+
+    if (event.target === lang) {
+        return;
     }
 
     closeAllSelect();
@@ -193,35 +198,38 @@ document.getElementById('mode-switch').addEventListener('click', function () {
 });
 
 document.querySelector('.top-lang').addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
     var langBtn = this;
     var langItems = document.querySelector('.top-lang-items');
     console.log("PASHOL NAHUY FIRST");
 
-    if (!langBtn.classList.contains('active')) {
-        console.log("PASHOL NAHUY");
-        langBtn.classList.add('active');
-        langItems.style.display = 'block';
-        if (getWindowWidth() < 768) {
-            langItems.style.width = '110px';
+    if(!langItems.contains(e.target)){
+        e.preventDefault();
+        e.stopPropagation();
+        if (!langBtn.classList.contains('active')) {
+            console.log("PASHOL NAHUY");
+            langBtn.classList.add('active');
+            langItems.style.display = 'block';
+            if (getWindowWidth() < 768) {
+                langItems.style.width = '110px';
+            } else {
+                langItems.style.width = '185px';
+            }
+    
+            langItems.style.left = '0px';
         } else {
-            langItems.style.width = '185px';
+            langBtn.classList.remove('active');
+            langItems.style.width = '0px';
         }
-
-        langItems.style.left = '0px';
-    } else {
-        langBtn.classList.remove('active');
-        langItems.style.width = '0px';
     }
+
 });
 
-document.querySelectorAll('.top-lang-items .item').forEach(function (item) {
-    item.addEventListener('click', function (e) {
-        document.querySelector('.top-lang-btn').classList.remove('active');
-        document.querySelector('.top-lang-items').style.width = '0px';
-    });
-});
+// document.querySelectorAll('.top-lang-items .item').forEach(function (item) {
+//     item.addEventListener('click', function (e) {
+//         document.querySelector('.top-lang-btn').classList.remove('active');
+//         document.querySelector('.top-lang-items').style.width = '0px';
+//     });
+// });
 
 
 function getActiveSelectText(elementID) {
@@ -232,7 +240,7 @@ function getActiveSelectText(elementID) {
         return;
     }
 
-    const input = activeElement.querySelector('.input');
+    const input = activeElement.querySelector('.input-check');
 
     return input.value;
 }

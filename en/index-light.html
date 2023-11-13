@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PowerCreo</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="images/ico/32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/ico/16.png">
-  <link rel="stylesheet" href="styles/style-light.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/ico/32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/ico/16.png">
+  <link rel="stylesheet" href="../styles/style-light.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
@@ -19,21 +19,21 @@
     <div class="logo-position" id="logo-position">
       <div class="top-lang" id="language-select">
         <a href="#" class="top-lang-btn">
-          <img src="images/ua.png" alt="lang">
+          <img src="../images/en.png" alt="lang">
         </a>
         <div class="top-lang-items" id="langSelect">
-          <a class="item a-change-lang" href="ru/index-light.html">
-            <img src="images/ru.png" alt="ru">
-            <span class="lang__text">Русский</span>
+          <a class="item a-change-lang" href="../index-light.html">
+            <img src="../images/ua.png" alt="ua">
+            <span class="lang__text">Українська</span>
           </a>
-          <a class="item a-change-lang" href="en/index-light.html">
-            <img src="images/en.png" alt="en">
-            <span class="lang__text">English</span>
+          <a class="item a-change-lang" href="../ru/index-light.html">
+            <img src="../images/ru.png" alt="ru">
+            <span class="lang__text">Русский</span>
           </a>
         </div>
       </div>
       <div class="logo-wrapper" id="logo">
-        <img src="images/Black.gif" class="logo-wrapper_img" id="image" alt="logo">
+        <img src="../images/Black.gif" class="logo-wrapper_img" id="image" alt="logo">
       </div>
       <label class="mode-switch sun" id="mode-switch">
         <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="sun">
@@ -52,7 +52,7 @@
         <div class="form-container" id="formPart1">
           <div class="form-group">
             <label class="form-group-label">
-              1. Вертикаль
+              1. Vertical
               <span class="help-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -69,25 +69,25 @@
                   <input class="input-check" type="radio" name="input-check-name" value="Гемблінг" checked=""
                     onclick="changeColorLight(this)">
                   <div class="input-check-name">
-                    <span class="input-check-name-span">Гемблінг</span>
+                    <span class="input-check-name-span">Gambling</span>
                   </div>
                 </div>
                 <div class="input-check-group option-4">
                   <input class="input-check" type="radio" name="input-check-name" value="Нутра" onclick="changeColorLight(this)">
                   <div class="input-check-name">
-                    <span class="input-check-name-span">Нутра</span>
+                    <span class="input-check-name-span">Nutra</span>
                   </div>
                 </div>
                 <div class="input-check-group option-4">
                   <input class="input-check" type="radio" name="input-check-name" value="Дейтінг" onclick="changeColorLight(this)">
                   <div class="input-check-name">
-                    <span class="input-check-name-span">Дейтінг</span>
+                    <span class="input-check-name-span">Adult</span>
                   </div>
                 </div>
                 <div class="input-check-group option-4">
                   <input class="input-check" type="radio" name="input-check-name" value="Фінанс" onclick="changeColorLight(this)">
                   <div class="input-check-name">
-                    <span class="input-check-name-span">Фінанс</span>
+                    <span class="input-check-name-span">Finance</span>
                   </div>
                 </div>
               </div>
@@ -98,7 +98,7 @@
             <div class="form-group-container">
               <div class="form-group-item select-left">
                 <label class="form-group-label">
-                  2. ГЕО
+                  2. GEO
                   <span class="help-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -112,18 +112,18 @@
                 <div class="form-group-input-container-select">
                   <div class="custom-select">
                     <select id="geoSelect2">
-                      <option value="0">Виберіть ГЕО</option>
-                      <option value="ua">Україна</option>
-                      <option value="de">Німеччина</option>
-                      <option value="en">Англія</option>
-                      <option value="es">Іспанія</option>
+                      <option value="0">Select a geo</option>
+                      <option value="ua">Ukraine</option>
+                      <option value="de">Germany</option>
+                      <option value="en">England</option>
+                      <option value="es">Spain</option>
                     </select>
                   </div>
                 </div>
               </div>
               <div class="form-group-item select-right">
                 <label class="form-group-label">
-                  3. Мова
+                  3. Language
                   <span class="help-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -137,11 +137,11 @@
                 <div class="form-group-input-container-select">
                   <div class="custom-select">
                     <select id="languageSelect3">
-                      <option value="0">Виберіть мову</option>
-                      <option value="ua">Українська</option>
-                      <option value="de">Німецька</option>
-                      <option value="en">Англійська</option>
-                      <option value="es">Іспанська</option>
+                      <option value="0">Select a language</option>
+                      <option value="ua">Ukrainian</option>
+                      <option value="de">German</option>
+                      <option value="en">English</option>
+                      <option value="es">Spanish</option>
                     </select>
                   </div>
                 </div>
@@ -151,7 +151,7 @@
 
           <div class="form-group">
             <label class="form-group-label">
-              4. Джерело трафіку
+              4. Source of traffic
               <span class="help-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -188,7 +188,7 @@
                 <div class="input-check-group option-4">
                   <input class="input-check" type="radio" name="input-check-name" value="Інше" onclick="changeColorLight(this)">
                   <div class="input-check-name">
-                    <span class="input-check-name-span">Інше</span>
+                    <span class="input-check-name-span">Other</span>
                   </div>
                 </div>
               </div>
@@ -197,7 +197,7 @@
 
           <div class="form-group">
             <label class="form-group-label">
-              5. Розмір
+              5. Size
               <span class="help-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -248,7 +248,7 @@
 
           <div class="form-group">
             <label class="form-group-label">
-              6. Довжина
+              6. Length
               <span class="help-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -265,19 +265,19 @@
                   <input class="input-check" type="radio" name="input-check-name" value="15-20 с" checked=""
                     onclick="changeColorLight(this)">
                   <div class="input-check-name">
-                    <span class="input-check-name-span">15-20 с</span>
+                    <span class="input-check-name-span">15-20s</span>
                   </div>
                 </div>
                 <div class="input-check-group option-3">
                   <input class="input-check" type="radio" name="input-check-name" value="20-25 с" onclick="changeColorLight(this)">
                   <div class="input-check-name">
-                    <span class="input-check-name-span">20-25 с</span>
+                    <span class="input-check-name-span">20-25s</span>
                   </div>
                 </div>
                 <div class="input-check-group option-3">
                   <input class="input-check" type="radio" name="input-check-name" value="25+ с" onclick="changeColorLight(this)">
                   <div class="input-check-name">
-                    <span class="input-check-name-span">25+ с</span>
+                    <span class="input-check-name-span">25s+</span>
                   </div>
                 </div>
               </div>
@@ -288,7 +288,7 @@
             <div class="form-group-container">
               <div class="form-group-item select-left">
                 <label class="form-group-label">
-                  7. Тематика
+                  7. Topic
                   <span class="help-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -302,7 +302,7 @@
                 <div class="form-group-input-container-select">
                   <div class="custom-select select-down">
                     <select id="themaSelect7">
-                      <option value="0">Виберіть тематику</option>
+                      <option value="0">Choose a theme</option>
                       <option value="Zevs">Zevs</option>
                       <option value="Bison">Bison</option>
                       <option value="Egypt">Egypt</option>
@@ -318,7 +318,7 @@
               </div>
               <div class="form-group-item select-right">
                 <label class="form-group-label">
-                  8. Вид гри
+                  8. Type of game
                   <span class="help-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -332,17 +332,17 @@
                 <div class="form-group-input-container-select">
                   <div class="custom-select select-down">
                     <select id="gameTypeSelect8">
-                      <option value="0">Виберіть вид гри</option>
+                      <option value="0">Select a game type</option>
                       <option value="Pinki">Pinki</option>
-                      <option value="Колесо">Колесо</option>
-                      <option value="Карти">Карти</option>
-                      <option value="Барабан">Барабан</option>
-                      <option value="Стирання">Стирання</option>
-                      <option value="Гральний автомат">Гральний автомат</option>
-                      <option value="Рулетка">Рулетка</option>
-                      <option value="Колпак">Колпак</option>
-                      <option value="Рандом">Рандом</option>
-                      <option value="Кубіки">Кубіки</option>
+                      <option value="Колесо">Wheel</option>
+                      <option value="Карти">Cards</option>
+                      <option value="Барабан">Drum</option>
+                      <option value="Стирання">Wipe</option>
+                      <option value="Гральний автомат">Slot machine</option>
+                      <option value="Рулетка">Roulette</option>
+                      <option value="Колпак">Hood</option>
+                      <option value="Рандом">Random</option>
+                      <option value="Кубіки">Dice</option>
                     </select>
                   </div>
                 </div>
@@ -355,7 +355,7 @@
         <div class="form-container" id="formPart2">
           <div class="form-group">
             <label class="form-group-label">
-              9. ОС
+              9. OS
               <span class="help-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -389,7 +389,7 @@
             <div class="form-group-container">
               <div class="form-group-item select-left">
                 <label class="form-group-label">
-                  10. Емоції виграшу
+                  10. Emotions of winning
                   <span class="help-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -406,13 +406,13 @@
                       <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
                         onclick="changeColorLight(this)">
                       <div class="input-check-name">
-                        <span class="input-check-name-span">Так</span>
+                        <span class="input-check-name-span">Yes</span>
                       </div>
                     </div>
                     <div class="input-check-group option-2">
                       <input class="input-check" type="radio" name="input-check-name" value="Ні" onclick="changeColorLight(this)">
                       <div class="input-check-name">
-                        <span class="input-check-name-span">Ні</span>
+                        <span class="input-check-name-span">No</span>
                       </div>
                     </div>
                   </div>
@@ -420,7 +420,7 @@
               </div>
               <div class="form-group-item">
                 <label class="form-group-label">
-                  11. Скрін банкінгу
+                  11. Screenshot of banking
                   <span class="help-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -437,13 +437,13 @@
                       <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
                         onclick="changeColorLight(this)">
                       <div class="input-check-name">
-                        <span class="input-check-name-span">Так</span>
+                        <span class="input-check-name-span">Yes</span>
                       </div>
                     </div>
                     <div class="input-check-group option-2">
                       <input class="input-check" type="radio" name="input-check-name" value="Ні" onclick="changeColorLight(this)">
                       <div class="input-check-name">
-                        <span class="input-check-name-span">Ні</span>
+                        <span class="input-check-name-span">No</span>
                       </div>
                     </div>
                   </div>
@@ -468,13 +468,13 @@
                       <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
                         onclick="changeColorLight(this)">
                       <div class="input-check-name">
-                        <span class="input-check-name-span">Так</span>
+                        <span class="input-check-name-span">Yes</span>
                       </div>
                     </div>
                     <div class="input-check-group option-2">
                       <input class="input-check" type="radio" name="input-check-name" value="Ні" onclick="changeColorLight(this)">
                       <div class="input-check-name">
-                        <span class="input-check-name-span">Ні</span>
+                        <span class="input-check-name-span">No</span>
                       </div>
                     </div>
                   </div>
@@ -485,7 +485,7 @@
 
           <div class="form-group">
             <label class="form-group-label">
-              13. Назва прили або скріншот
+              13. App name or screenshot
               <span class="help-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -500,7 +500,7 @@
               <div class="form-details-group-flex">
                 <div class="input-group">
                   <input required="" type="text" name="text" autocomplete="off" class="text-input" id="appNameInput13">
-                  <label class="user-label">Назва прили</label>
+                  <label class="user-label">App name</label>
                 </div>
               </div>
               <div class="form-details-group-flex">
@@ -514,7 +514,7 @@
 
           <div class="form-group">
             <label class="form-group-label">
-              14.Термін виконання
+              14. Deadline
               <span class="help-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -531,14 +531,14 @@
                   <input class="input-check" type="radio" name="input-check-name" value="Стандарт (1-2дні)" checked=""
                     onclick="changeColorLight(this)">
                   <div class="input-check-name">
-                    <span class="input-check-name-span">Стандарт (1-2дні)</span>
+                    <span class="input-check-name-span">Standard (1-2 days)</span>
                   </div>
                 </div>
                 <div class="input-check-group option-2">
                   <input class="input-check" type="radio" name="input-check-name" value="Терміново (до 3 год)"
                     onclick="changeColorLight(this)">
                   <div class="input-check-name">
-                    <span class="input-check-name-span">Терміново (до 3 год)</span>
+                    <span class="input-check-name-span">Urgently (up to 3 hours)</span>
                   </div>
                 </div>
               </div>
@@ -549,7 +549,7 @@
             <div class="form-group-container">
               <div class="form-group-item">
                 <label class="form-group-label">
-                  15.Посилання на оффер
+                  15. Link to the offer
                   <span class="help-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -564,7 +564,7 @@
                   <div class="input-group">
                     <input required="" type="text" name="text" autocomplete="off" class="text-input"
                       id="offerLinkInput15">
-                    <label class="user-label">Посилання</label>
+                    <label class="user-label">Link</label>
                   </div>
                 </div>
               </div>
@@ -599,7 +599,7 @@
               </svg>
             </div>
           </div>
-          <span>Надіслати замовлення</span>
+          <span>Send an order</span>
         </button>
       </div>
 
@@ -609,16 +609,16 @@
   <div id="modal" class="modal">
     <div class="modal-content" id="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <h3>Пояснення</h3>
+      <h3>Explanation</h3>
       <div class="modal-body">
         <!-- <img src="your-image.jpg" alt="Your Image"> -->
-        <p>*Тут буде картинка</p>
+        <p>*There will be a picture here</p>
       </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 </body>
 
 </html>
