@@ -201,7 +201,7 @@
 
             <div class="form-group">
               <label class="form-group-label">
-                5. Розмір
+                5. Розмір (Ш/В)
                 <span class="help-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -265,25 +265,32 @@
               </label>
               <div class="form-group-input-container">
                 <div class="wrapper" id="lengthSelect6">
-                  <div class="input-check-group option-3">
+                  <div class="input-check-group option-4">
                     <input class="input-check" type="radio" name="input-check-name" value="15-20 с" checked=""
                       onclick="changeColor(this)">
                     <div class="input-check-name">
                       <span class="input-check-name-span">15-20 с</span>
                     </div>
                   </div>
-                  <div class="input-check-group option-3">
+                  <div class="input-check-group option-4">
                     <input class="input-check" type="radio" name="input-check-name" value="20-25 с"
                       onclick="changeColor(this)">
                     <div class="input-check-name">
                       <span class="input-check-name-span">20-25 с</span>
                     </div>
                   </div>
-                  <div class="input-check-group option-3">
+                  <div class="input-check-group option-4">
                     <input class="input-check" type="radio" name="input-check-name" value="25+ с"
                       onclick="changeColor(this)">
                     <div class="input-check-name">
                       <span class="input-check-name-span">25+ с</span>
+                    </div>
+                  </div>
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="25+ с"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Індивідуально</span>
                     </div>
                   </div>
                 </div>
@@ -309,15 +316,30 @@
                     <div class="custom-select select-down">
                       <select id="themaSelect7">
                         <option value="0">Виберіть тематику</option>
-                        <option value="Zevs">Zevs</option>
-                        <option value="Bison">Bison</option>
-                        <option value="Egypt">Egypt</option>
-                        <option value="Jungle">Jungle</option>
-                        <option value="Future">Future</option>
-                        <option value="Casino">Casino</option>
-                        <option value="Animation">Animation</option>
-                        <option value="Wolf">Wolf</option>
-                        <option value="Pirates">Pirates</option>
+                        <option value="Грецькі боги">Грецькі боги</option>
+                        <option value="Єгипет">Єгипет</option>
+                        <option value="Джунглі">Джунглі</option>
+                        <option value="Кенді">Кенді</option>
+                        <option value="Фрукти">Фрукти</option>
+                        <option value="Авіатор">Авіатор</option>
+                        <option value="Казино">Казино</option>
+                        <option value="Ковбої">Ковбої</option>
+                        <option value="Азія/Китай">Азія/Китай</option>
+                        <option value="Новий рік">Новий рік</option>
+                        <option value="Китайський Новий Рік">Китайський Новий Рік</option>
+                        <option value="Русалочка">Русалочка</option>
+                        <option value="Вовк">Вовк</option>
+                        <option value="Джокер">Джокер</option>
+                        <option value="Пірати">Пірати</option>
+                        <option value="Лепрекон">Лепрекон</option>
+                        <option value="Хеловін">Хеловін</option>
+                        <option value="Бізон">Бізон</option>
+                        <option value="Нічна Тематика">Нічна Тематика</option>
+                        <option value="День мертвих">День мертвих</option>
+                        <option value="Зооанімація">Зооанімація</option>
+                        <option value="Вікінги">Вікінги</option>
+                        <option value="Лицарі">Лицарі</option>
+                        <option value="Горила">Горила</option>
                       </select>
                     </div>
                   </div>
@@ -339,16 +361,10 @@
                     <div class="custom-select select-down">
                       <select id="gameTypeSelect8">
                         <option value="0">Виберіть вид гри</option>
-                        <option value="Pinki">Pinki</option>
-                        <option value="Колесо">Колесо</option>
-                        <option value="Карти">Карти</option>
                         <option value="Барабан">Барабан</option>
+                        <option value="Слоти">Слоти</option>
                         <option value="Стирання">Стирання</option>
-                        <option value="Гральний автомат">Гральний автомат</option>
-                        <option value="Рулетка">Рулетка</option>
-                        <option value="Колпак">Колпак</option>
-                        <option value="Рандом">Рандом</option>
-                        <option value="Кубіки">Кубіки</option>
+                        <option value="Колесо фортуни">Колесо фортуни</option>
                       </select>
                     </div>
                   </div>
@@ -497,7 +513,7 @@
 
             <div class="form-group">
               <label class="form-group-label">
-                13. Назва прили або скріншот
+                13. Назва додатку або скріншот
                 <span class="help-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -513,14 +529,14 @@
                   <div class="input-group">
                     <input required="" type="text" name="text" autocomplete="off" class="text-input"
                       id="appNameInput13">
-                    <label class="user-label">Назва прили</label>
+                    <label class="user-label">Назва додатку</label>
                   </div>
                 </div>
 
                 <div class="form-group-input-item">
                   <div id="fileInputContainer">
                     <input type="file" id="fileInput" onchange="displayFileName(this)">
-                    <label id="fileInputLabel" for="fileInput">Choose a file</label>
+                    <label id="fileInputLabel" for="fileInput">Виберіть файл</label>
                   </div>
                 </div>
 
@@ -529,7 +545,7 @@
 
             <div class="form-group">
               <label class="form-group-label">
-                14.Термін виконання
+                14. Термін виконання
                 <span class="help-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -564,7 +580,7 @@
               <div class="form-group-container-input">
                 <div class="form-group-input-item">
                   <label class="form-group-label">
-                    15.Посилання на оффер
+                    15. Посилання на оффер
                     <span class="help-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

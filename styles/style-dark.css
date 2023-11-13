@@ -61,7 +61,7 @@
   .top-lang {
     position: absolute;
     top: 40px;
-    left: 6vw;
+    left: 6.7vw;
     cursor: pointer;
     opacity: 0;
     transition: opacity 1.5s ease;
@@ -130,7 +130,7 @@
     fill: var(--text-color);
     position: absolute;
     top: 40px;
-    right: 6vw;
+    right: 6.7vw;
     cursor: pointer;
     opacity: 0;
     transition: opacity 1.5s ease;
@@ -147,11 +147,19 @@
   }
 
   .form-part {
-    padding: 20px;
+    padding-top: 20px;
     box-sizing: border-box;
     width: 50%;
     display: flex;
     justify-content: center;
+  }
+
+  #formPart1{
+    padding-left: 30px;
+  }
+
+  #formPart2{
+    padding-right: 30px;
   }
 
   .form-container {
@@ -318,6 +326,22 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
 
 .mode-switch.display {
   opacity: 1;
@@ -602,6 +626,17 @@
   justify-content: center;
 }
 
+/* .select-items {
+  position: absolute;
+  background: var(--select-items-background-color);
+  top: 90%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+} */
+
 .select-items {
   position: absolute;
   background: var(--select-items-background-color);
@@ -611,7 +646,10 @@
   z-index: 99;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  max-height: 400px; /* Максимальна висота списку */
+  overflow-y: auto; /* Додано прокрутку при необхідності */
 }
+
 
 .select-hide {
   display: none;

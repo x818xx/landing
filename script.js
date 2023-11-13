@@ -141,7 +141,7 @@ window.onclick = function (event) {
         closeModal();
     }
 
-    if (event.target === lang) {
+    if (lang.contains(event.target)) {
         return;
     }
 
