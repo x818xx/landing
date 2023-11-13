@@ -224,14 +224,6 @@ document.querySelector('.top-lang').addEventListener('click', function (e) {
 
 });
 
-// document.querySelectorAll('.top-lang-items .item').forEach(function (item) {
-//     item.addEventListener('click', function (e) {
-//         document.querySelector('.top-lang-btn').classList.remove('active');
-//         document.querySelector('.top-lang-items').style.width = '0px';
-//     });
-// });
-
-
 function getActiveSelectText(elementID) {
     const wrapper = document.getElementById(elementID);
     const activeElement = wrapper.querySelector('.active');

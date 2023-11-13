@@ -217,10 +217,9 @@
   }
 
   .top-lang {
-    top: 40px;
     position: absolute;
     top: 40px;
-    left: 30px;
+    left: 6vw;
     cursor: pointer;
     opacity: 0;
     transition: opacity 1.5s ease;
@@ -290,7 +289,7 @@
 
     position: absolute;
     top: 40px;
-    right: 30px;
+    right: 6vw;
     cursor: pointer;
     opacity: 0;
     transition: opacity 1.5s ease;
@@ -606,7 +605,7 @@
 .select-items {
   position: absolute;
   background: var(--select-items-background-color);
-  top: 110%;
+  top: 90%;
   left: 0;
   right: 0;
   z-index: 99;
