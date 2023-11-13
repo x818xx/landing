@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     logoWrapper.classList.add("fix-position");
                     logoPosition.style.height = '18vh';
                 } else {
-                    logoPosition.style.height = '16vh';
+                    logoPosition.style.height = '22vh';
                 }
                 document.getElementById("content").classList.add("display");
                 document.getElementById("language-select").classList.add("display");

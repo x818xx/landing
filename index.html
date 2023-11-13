@@ -47,568 +47,577 @@
 
       <div class="form">
 
-        <div class="form-container" id="formPart1">
-          <div class="form-group">
-            <label class="form-group-label">
-              1. Вертикаль
-              <span class="help-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="feather feather-help-circle">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                  <line x1="12" y1="17" x2="12.01" y2="17" />
-                </svg>
-              </span>
-            </label>
-            <div class="form-group-input-container">
-              <div class="wrapper" id="verticalSelect1">
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="Гемблінг" checked=""
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">Гемблінг</span>
+        <div class="form-part" id="formPart1">
+          <div class="form-container">
+
+            <div class="form-group">
+              <label class="form-group-label">
+                1. Вертикаль
+                <span class="help-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-help-circle">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                </span>
+              </label>
+              <div class="form-group-input-container">
+                <div class="wrapper" id="verticalSelect1">
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="Гемблінг" checked=""
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Гемблінг</span>
+                    </div>
                   </div>
-                </div>
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="Нутра"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">Нутра</span>
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="Нутра"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Нутра</span>
+                    </div>
                   </div>
-                </div>
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="Дейтінг"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">Дейтінг</span>
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="Дейтінг"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Дейтінг</span>
+                    </div>
                   </div>
-                </div>
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="Фінанс"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">Фінанс</span>
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="Фінанс"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Фінанс</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <div class="form-group-container">
-              <div class="form-group-item select-left">
-                <label class="form-group-label">
-                  2. ГЕО
-                  <span class="help-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-help-circle">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                      <line x1="12" y1="17" x2="12.01" y2="17" />
-                    </svg>
-                  </span>
-                </label>
-                <div class="form-group-input-container-select">
-                  <div class="custom-select">
-                    <select id="geoSelect2">
-                      <option value="0">Виберіть ГЕО</option>
-                      <option value="ua">Україна</option>
-                      <option value="de">Німеччина</option>
-                      <option value="en">Англія</option>
-                      <option value="es">Іспанія</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group-item select-right">
-                <label class="form-group-label">
-                  3. Мова
-                  <span class="help-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-help-circle">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                      <line x1="12" y1="17" x2="12.01" y2="17" />
-                    </svg>
-                  </span>
-                </label>
-                <div class="form-group-input-container-select">
-                  <div class="custom-select">
-                    <select id="languageSelect3">
-                      <option value="0">Виберіть мову</option>
-                      <option value="ua">Українська</option>
-                      <option value="de">Німецька</option>
-                      <option value="en">Англійська</option>
-                      <option value="es">Іспанська</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-group-label">
-              4. Джерело трафіку
-              <span class="help-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="feather feather-help-circle">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                  <line x1="12" y1="17" x2="12.01" y2="17" />
-                </svg>
-              </span>
-            </label>
-            <div class="form-group-input-container">
-              <div class="wrapper" id="traffSelect4">
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="Google Ads" checked=""
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">Google Ads</span>
-                  </div>
-                </div>
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="Facebook Ads"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">Facebook Ads</span>
-                  </div>
-                </div>
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="Bing Ads"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">Bing Ads</span>
-                  </div>
-                </div>
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="Інше"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">Інше</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-group-label">
-              5. Розмір
-              <span class="help-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="feather feather-help-circle">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                  <line x1="12" y1="17" x2="12.01" y2="17" />
-                </svg>
-              </span>
-            </label>
-            <div class="form-group-input-container">
-              <div class="wrapper" id="sizeSelect5">
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="1х1(1080x1080)" checked=""
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span span-small">1х1(1080x1080)
+            <div class="form-group">
+              <div class="form-group-container-input">
+                <div class="form-group-input-item">
+                  <label class="form-group-label">
+                    2. ГЕО
+                    <span class="help-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-help-circle">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
                     </span>
+                  </label>
+                  <div class="form-input-group-item">
+                    <div class="custom-select">
+                      <select id="geoSelect2">
+                        <option value="0">Виберіть ГЕО</option>
+                        <option value="ua">Україна</option>
+                        <option value="de">Німеччина</option>
+                        <option value="en">Англія</option>
+                        <option value="es">Іспанія</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="2x3(1080x1620)"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span span-small">2x3(1080x1620)
+                <div class="form-group-input-item">
+                  <label class="form-group-label">
+                    3. Мова
+                    <span class="help-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-help-circle">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
                     </span>
-                  </div>
-                </div>
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="9x16 (1080x1920)"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span span-small">9x16 (1080x1920)
-                    </span>
-                  </div>
-                </div>
-                <div class="input-check-group option-4">
-                  <input class="input-check" type="radio" name="input-check-name" value="16x9 (1920x1080)"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span span-small">16x9 (1920x1080)
-                    </span>
+                  </label>
+                  <div class="form-input-group-item">
+                    <div class="custom-select">
+                      <select id="languageSelect3">
+                        <option value="0">Виберіть мову</option>
+                        <option value="ua">Українська</option>
+                        <option value="de">Німецька</option>
+                        <option value="en">Англійська</option>
+                        <option value="es">Іспанська</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="form-group-label">
-              6. Довжина
-              <span class="help-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="feather feather-help-circle">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                  <line x1="12" y1="17" x2="12.01" y2="17" />
-                </svg>
-              </span>
-            </label>
-            <div class="form-group-input-container">
-              <div class="wrapper" id="lengthSelect6">
-                <div class="input-check-group option-3">
-                  <input class="input-check" type="radio" name="input-check-name" value="15-20 с" checked=""
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">15-20 с</span>
+            <div class="form-group">
+              <label class="form-group-label">
+                4. Джерело трафіку
+                <span class="help-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-help-circle">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                </span>
+              </label>
+              <div class="form-group-input-container">
+                <div class="wrapper" id="traffSelect4">
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="Google Ads" checked=""
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Google Ads</span>
+                    </div>
                   </div>
-                </div>
-                <div class="input-check-group option-3">
-                  <input class="input-check" type="radio" name="input-check-name" value="20-25 с"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">20-25 с</span>
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="Facebook Ads"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Facebook Ads</span>
+                    </div>
                   </div>
-                </div>
-                <div class="input-check-group option-3">
-                  <input class="input-check" type="radio" name="input-check-name" value="25+ с"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">25+ с</span>
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="Bing Ads"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Bing Ads</span>
+                    </div>
+                  </div>
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="Інше"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Інше</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <div class="form-group-container">
-              <div class="form-group-item select-left">
-                <label class="form-group-label">
-                  7. Тематика
-                  <span class="help-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-help-circle">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                      <line x1="12" y1="17" x2="12.01" y2="17" />
-                    </svg>
-                  </span>
-                </label>
-                <div class="form-group-input-container-select">
-                  <div class="custom-select select-down">
-                    <select id="themaSelect7">
-                      <option value="0">Виберіть тематику</option>
-                      <option value="Zevs">Zevs</option>
-                      <option value="Bison">Bison</option>
-                      <option value="Egypt">Egypt</option>
-                      <option value="Jungle">Jungle</option>
-                      <option value="Future">Future</option>
-                      <option value="Casino">Casino</option>
-                      <option value="Animation">Animation</option>
-                      <option value="Wolf">Wolf</option>
-                      <option value="Pirates">Pirates</option>
-                    </select>
+            <div class="form-group">
+              <label class="form-group-label">
+                5. Розмір
+                <span class="help-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-help-circle">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                </span>
+              </label>
+              <div class="form-group-input-container">
+                <div class="wrapper" id="sizeSelect5">
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="1х1(1080x1080)" checked=""
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span span-small">1х1(1080x1080)
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="form-group-item select-right">
-                <label class="form-group-label">
-                  8. Вид гри
-                  <span class="help-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-help-circle">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                      <line x1="12" y1="17" x2="12.01" y2="17" />
-                    </svg>
-                  </span>
-                </label>
-                <div class="form-group-input-container-select">
-                  <div class="custom-select select-down">
-                    <select id="gameTypeSelect8">
-                      <option value="0">Виберіть вид гри</option>
-                      <option value="Pinki">Pinki</option>
-                      <option value="Колесо">Колесо</option>
-                      <option value="Карти">Карти</option>
-                      <option value="Барабан">Барабан</option>
-                      <option value="Стирання">Стирання</option>
-                      <option value="Гральний автомат">Гральний автомат</option>
-                      <option value="Рулетка">Рулетка</option>
-                      <option value="Колпак">Колпак</option>
-                      <option value="Рандом">Рандом</option>
-                      <option value="Кубіки">Кубіки</option>
-                    </select>
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="2x3(1080x1620)"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span span-small">2x3(1080x1620)
+                      </span>
+                    </div>
+                  </div>
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="9x16 (1080x1920)"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span span-small">9x16 (1080x1920)
+                      </span>
+                    </div>
+                  </div>
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="16x9 (1920x1080)"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span span-small">16x9 (1920x1080)
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
+            <div class="form-group">
+              <label class="form-group-label">
+                6. Довжина
+                <span class="help-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-help-circle">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                </span>
+              </label>
+              <div class="form-group-input-container">
+                <div class="wrapper" id="lengthSelect6">
+                  <div class="input-check-group option-3">
+                    <input class="input-check" type="radio" name="input-check-name" value="15-20 с" checked=""
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">15-20 с</span>
+                    </div>
+                  </div>
+                  <div class="input-check-group option-3">
+                    <input class="input-check" type="radio" name="input-check-name" value="20-25 с"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">20-25 с</span>
+                    </div>
+                  </div>
+                  <div class="input-check-group option-3">
+                    <input class="input-check" type="radio" name="input-check-name" value="25+ с"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">25+ с</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-group-container-input">
+                <div class="form-group-input-item">
+                  <label class="form-group-label">
+                    7. Тематика
+                    <span class="help-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-help-circle">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
+                    </span>
+                  </label>
+                  <div class="form-input-group-item">
+                    <div class="custom-select select-down">
+                      <select id="themaSelect7">
+                        <option value="0">Виберіть тематику</option>
+                        <option value="Zevs">Zevs</option>
+                        <option value="Bison">Bison</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="Jungle">Jungle</option>
+                        <option value="Future">Future</option>
+                        <option value="Casino">Casino</option>
+                        <option value="Animation">Animation</option>
+                        <option value="Wolf">Wolf</option>
+                        <option value="Pirates">Pirates</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group-input-item">
+                  <label class="form-group-label">
+                    8. Вид гри
+                    <span class="help-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-help-circle">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
+                    </span>
+                  </label>
+                  <div class="form-input-group-item">
+                    <div class="custom-select select-down">
+                      <select id="gameTypeSelect8">
+                        <option value="0">Виберіть вид гри</option>
+                        <option value="Pinki">Pinki</option>
+                        <option value="Колесо">Колесо</option>
+                        <option value="Карти">Карти</option>
+                        <option value="Барабан">Барабан</option>
+                        <option value="Стирання">Стирання</option>
+                        <option value="Гральний автомат">Гральний автомат</option>
+                        <option value="Рулетка">Рулетка</option>
+                        <option value="Колпак">Колпак</option>
+                        <option value="Рандом">Рандом</option>
+                        <option value="Кубіки">Кубіки</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        <div class="form-container" id="formPart2">
-          <div class="form-group">
-            <label class="form-group-label">
-              9. ОС
-              <span class="help-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="feather feather-help-circle">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                  <line x1="12" y1="17" x2="12.01" y2="17" />
-                </svg>
-              </span>
-            </label>
-            <div class="form-group-input-container">
-              <div class="wrapper wrapper-right" id="osSelect9">
-                <div class="input-check-group option-2">
-                  <input class="input-check" type="radio" name="input-check-name" value="Android" checked=""
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">Android</span>
-                  </div>
-                </div>
-                <div class="input-check-group option-2">
-                  <input class="input-check" type="radio" name="input-check-name" value="IOS"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">IOS</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="form-group-container">
-              <div class="form-group-item select-left">
-                <label class="form-group-label">
-                  10. Емоції виграшу
-                  <span class="help-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-help-circle">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                      <line x1="12" y1="17" x2="12.01" y2="17" />
-                    </svg>
-                  </span>
-                </label>
-                <div class="form-group-input-container">
-                  <div class="wrapper wrapper-small" id="emotionsSelect10">
-                    <div class="input-check-group option-2">
-                      <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
-                        onclick="changeColor(this)">
-                      <div class="input-check-name">
-                        <span class="input-check-name-span">Так</span>
-                      </div>
-                    </div>
-                    <div class="input-check-group option-2">
-                      <input class="input-check" type="radio" name="input-check-name" value="Ні"
-                        onclick="changeColor(this)">
-                      <div class="input-check-name">
-                        <span class="input-check-name-span">Ні</span>
-                      </div>
+        <div class="form-part" id="formPart2">
+          <div class="form-container">
+            <div class="form-group">
+              <label class="form-group-label">
+                9. ОС
+                <span class="help-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-help-circle">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                </span>
+              </label>
+              <div class="form-group-input-container">
+                <div class="wrapper" id="osSelect9">
+                  <div class="input-check-group option-2">
+                    <input class="input-check" type="radio" name="input-check-name" value="Android" checked=""
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Android</span>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="form-group-item">
-                <label class="form-group-label">
-                  11. Скрін банкінгу
-                  <span class="help-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-help-circle">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                      <line x1="12" y1="17" x2="12.01" y2="17" />
-                    </svg>
-                  </span>
-                </label>
-                <div class="form-group-input-container">
-                  <div class="wrapper wrapper-small" id="bankingSelect11">
-                    <div class="input-check-group option-2">
-                      <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
-                        onclick="changeColor(this)">
-                      <div class="input-check-name">
-                        <span class="input-check-name-span">Так</span>
-                      </div>
-                    </div>
-                    <div class="input-check-group option-2">
-                      <input class="input-check" type="radio" name="input-check-name" value="Ні"
-                        onclick="changeColor(this)">
-                      <div class="input-check-name">
-                        <span class="input-check-name-span">Ні</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group-item select-right">
-                <label class="form-group-label">
-                  12. Push-Up
-                  <span class="help-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-help-circle">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                      <line x1="12" y1="17" x2="12.01" y2="17" />
-                    </svg>
-                  </span>
-                </label>
-                <div class="form-group-input-container">
-                  <div class="wrapper wrapper-small" id="pushUpSelect12">
-                    <div class="input-check-group option-2">
-                      <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
-                        onclick="changeColor(this)">
-                      <div class="input-check-name">
-                        <span class="input-check-name-span">Так</span>
-                      </div>
-                    </div>
-                    <div class="input-check-group option-2">
-                      <input class="input-check" type="radio" name="input-check-name" value="Ні"
-                        onclick="changeColor(this)">
-                      <div class="input-check-name">
-                        <span class="input-check-name-span">Ні</span>
-                      </div>
+                  <div class="input-check-group option-2">
+                    <input class="input-check" type="radio" name="input-check-name" value="IOS"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">IOS</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="form-group-label">
-              13. Назва прили або скріншот
-              <span class="help-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="feather feather-help-circle">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                  <line x1="12" y1="17" x2="12.01" y2="17" />
-                </svg>
-              </span>
-            </label>
-            <div class="form-group-container">
-              <div class="form-details-group-flex">
-                <div class="input-group">
-                  <input required="" type="text" name="text" autocomplete="off" class="text-input" id="appNameInput13">
-                  <label class="user-label">Назва прили</label>
+            <div class="form-group">
+              <div class="form-group-container">
+                <div class="form-group-item">
+                  <label class="form-group-label">
+                    10. Емоції виграшу
+                    <span class="help-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-help-circle">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
+                    </span>
+                  </label>
+                  <div class="form-group-input-container">
+                    <div class="wrapper" id="emotionsSelect10">
+                      <div class="input-check-group option-2">
+                        <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
+                          onclick="changeColor(this)">
+                        <div class="input-check-name">
+                          <span class="input-check-name-span">Так</span>
+                        </div>
+                      </div>
+                      <div class="input-check-group option-2">
+                        <input class="input-check" type="radio" name="input-check-name" value="Ні"
+                          onclick="changeColor(this)">
+                        <div class="input-check-name">
+                          <span class="input-check-name-span">Ні</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="form-details-group-flex">
-                <div id="fileInputContainer">
-                  <input type="file" id="fileInput" onchange="displayFileName(this)">
-                  <label id="fileInputLabel" for="fileInput">Choose a file</label>
+                <div class="form-group-item">
+                  <label class="form-group-label">
+                    11. Скрін банкінгу
+                    <span class="help-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-help-circle">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
+                    </span>
+                  </label>
+                  <div class="form-group-input-container">
+                    <div class="wrapper center-check-item" id="bankingSelect11">
+                      <div class="input-check-group option-2">
+                        <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
+                          onclick="changeColor(this)">
+                        <div class="input-check-name">
+                          <span class="input-check-name-span">Так</span>
+                        </div>
+                      </div>
+                      <div class="input-check-group option-2">
+                        <input class="input-check" type="radio" name="input-check-name" value="Ні"
+                          onclick="changeColor(this)">
+                        <div class="input-check-name">
+                          <span class="input-check-name-span">Ні</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group-item">
+                  <label class="form-group-label">
+                    12. Push-Up
+                    <span class="help-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-help-circle">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                      </svg>
+                    </span>
+                  </label>
+                  <div class="form-group-input-container">
+                    <div class="wrapper" id="pushUpSelect12">
+                      <div class="input-check-group option-2">
+                        <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
+                          onclick="changeColor(this)">
+                        <div class="input-check-name">
+                          <span class="input-check-name-span">Так</span>
+                        </div>
+                      </div>
+                      <div class="input-check-group option-2">
+                        <input class="input-check" type="radio" name="input-check-name" value="Ні"
+                          onclick="changeColor(this)">
+                        <div class="input-check-name">
+                          <span class="input-check-name-span">Ні</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="form-group-label">
-              14.Термін виконання
-              <span class="help-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="feather feather-help-circle">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                  <line x1="12" y1="17" x2="12.01" y2="17" />
-                </svg>
-              </span>
-            </label>
-            <div class="form-group-input-container">
-              <div class="wrapper wrapper-right" id="deadlineSelect14">
-                <div class="input-check-group option-2">
-                  <input class="input-check" type="radio" name="input-check-name" value="Стандарт (1-2дні)" checked=""
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">Стандарт (1-2дні)</span>
-                  </div>
-                </div>
-                <div class="input-check-group option-2">
-                  <input class="input-check" type="radio" name="input-check-name" value="Терміново (до 3 год)"
-                    onclick="changeColor(this)">
-                  <div class="input-check-name">
-                    <span class="input-check-name-span">Терміново (до 3 год)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="form-group-container">
-              <div class="form-group-item">
-                <label class="form-group-label">
-                  15.Посилання на оффер
-                  <span class="help-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      class="feather feather-help-circle">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
-                  </span>
-                </label>
-                <div class="form-group-input-container-inputs">
+            <div class="form-group">
+              <label class="form-group-label">
+                13. Назва прили або скріншот
+                <span class="help-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-help-circle">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                </span>
+              </label>
+              <div class="form-group-container-input">
+                <div class="form-group-input-item">
                   <div class="input-group">
                     <input required="" type="text" name="text" autocomplete="off" class="text-input"
-                      id="offerLinkInput15">
-                    <label class="user-label">Посилання</label>
+                      id="appNameInput13">
+                    <label class="user-label">Назва прили</label>
                   </div>
                 </div>
+
+                <div class="form-group-input-item">
+                  <div id="fileInputContainer">
+                    <input type="file" id="fileInput" onchange="displayFileName(this)">
+                    <label id="fileInputLabel" for="fileInput">Choose a file</label>
+                  </div>
+                </div>
+
               </div>
-              <div class="form-group-item">
-                <label class="form-group-label">
-                  Telegram
-                </label>
-                <div class="form-group-input-container-inputs">
-                  <div class="input-group">
-                    <input required="" type="text" name="text" autocomplete="off" class="text-input"
-                      id="tgUsernameInput">
-                    <label class="user-label">@username</label>
+            </div>
+
+            <div class="form-group">
+              <label class="form-group-label">
+                14.Термін виконання
+                <span class="help-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-help-circle">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                </span>
+              </label>
+              <div class="form-group-input-container">
+                <div class="wrapper" id="deadlineSelect14">
+                  <div class="input-check-group option-2">
+                    <input class="input-check" type="radio" name="input-check-name" value="Стандарт (1-2дні)" checked=""
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Стандарт (1-2дні)</span>
+                    </div>
+                  </div>
+                  <div class="input-check-group option-2">
+                    <input class="input-check" type="radio" name="input-check-name" value="Терміново (до 3 год)"
+                      onclick="changeColor(this)">
+                    <div class="input-check-name">
+                      <span class="input-check-name-span">Терміново (до 3 год)</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
+            <div class="form-group">
+              <div class="form-group-container-input">
+                <div class="form-group-input-item">
+                  <label class="form-group-label">
+                    15.Посилання на оффер
+                    <span class="help-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-help-circle">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                      </svg>
+                    </span>
+                  </label>
+
+                  <div class="form-input-group-item">
+                    <div class="input-group">
+                      <input required="" type="text" name="text" autocomplete="off" class="text-input"
+                        id="offerLinkInput15">
+                      <label class="user-label">Посилання</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group-input-item">
+                  <label class="form-group-label">
+                    16. Telegram
+                  </label>
+                  <div class="form-input-group-item">
+                    <div class="input-group">
+                      <input required="" type="text" name="text" autocomplete="off" class="text-input"
+                        id="tgUsernameInput">
+                      <label class="user-label">@username</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="send-button-container">
+              <button class="send-button" id="sendButton">
+                <div class="svg-wrapper-1">
+                  <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path fill="currentColor"
+                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+                <span>Надіслати замовлення</span>
+              </button>
+            </div>
+
+          </div>
         </div>
 
-      </div>
-
-      <div class="send-button-container">
-        <button class="send-button" id="sendButton">
-          <div class="svg-wrapper-1">
-            <div class="svg-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path fill="currentColor"
-                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
-                </path>
-              </svg>
-            </div>
-          </div>
-          <span>Надіслати замовлення</span>
-        </button>
       </div>
 
     </div>
