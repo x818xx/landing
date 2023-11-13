@@ -1,64 +1,3 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     const logo = document.getElementById("logo");
-//     const mode = document.getElementById("mode-switch");
-
-//     setTimeout(() => {
-//         logo.classList.add("expanded");
-//     }, 300);
-
-//     setTimeout(() => {
-//         logo.classList.add("place-header");
-//         logo.addEventListener("transitionend", function (event) {
-//             if (event.propertyName === "transform") {
-//                 document.getElementById("content").classList.add("display");
-//                 document.getElementById("mode-switch").classList.add("display");
-//                 const logoWrapper = document.querySelector('.logo-wrapper');
-
-//                 let isScrolledToTop = true;
-//                 let previousScrollPos = window.pageYOffset;
-//                 let logoAnimationInProgress = false;
-
-//                 function handleScroll() {
-//                     const currentScrollPos = window.pageYOffset;
-
-//                     if (currentScrollPos > previousScrollPos && !logoAnimationInProgress) {
-//                         isScrolledToTop = false;
-//                         logoWrapper.classList.add('opacity-zero');
-//                         mode.classList.remove('display');
-//                         logoWrapper.classList.remove('expanded', 'place-header', 'expanded-after', 'place-header-after');
-//                     } else {
-//                         isScrolledToTop = currentScrollPos == 0;
-//                         if (isScrolledToTop) {
-//                             if (!logoAnimationInProgress) {
-//                                 logoAnimationInProgress = true;
-//                                 logoWrapper.classList.remove('opacity-zero');
-//                                 mode.classList.add('display');
-//                                 logoWrapper.classList.add('expanded-after', 'place-header-after');
-//                             }
-//                         } else {
-//                             logoAnimationInProgress = false;
-//                         }
-//                     }
-
-//                     previousScrollPos = currentScrollPos;
-
-//                     window.requestAnimationFrame(handleScroll);
-//                 }
-
-//                 window.addEventListener('scroll', handleScroll);
-//             }
-//         });
-//     }, 3000);
-
-//     var helpIcons = document.querySelectorAll('.help-icon');
-
-//     helpIcons.forEach(function (helpIcon) {
-//         helpIcon.addEventListener('click', function () {
-//             openModal();
-//         });
-//     });
-// });
-
 function getWindowWidth() {
     return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 }
@@ -90,37 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }, 3000);
+
+    var helpIcons = document.querySelectorAll('.help-icon');
+
+    helpIcons.forEach(function (helpIcon) {
+        helpIcon.addEventListener('click', function () {
+            openModal();
+        });
+    });
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const logo = document.getElementById("logo");
-//     const logoPosition = document.getElementById("logo-position");
-//     const logoWrapper = document.querySelector('.logo-wrapper');
-//     const mode = document.getElementById("mode-switch");
-
-//     setTimeout(() => {
-//         logo.classList.add("expanded");
-//     }, 300);
-
-//     setTimeout(() => {
-//         logo.classList.add("place-header");
-//         logo.addEventListener("transitionend", function (event) {
-//             if (event.propertyName === "transform") {
-//                 //   logoWrapper.classList.add("fix-position");
-//                 logoPosition.style.height = '16vh';
-//                 document.getElementById("content").classList.add("display");
-//                 document.getElementById("language-select").classList.add("display");
-//                 mode.classList.add("display");
-
-//                 // logoWrapper.style.position = 'absolute';
-//                 // logoWrapper.style.left = '50%';
-//                 // logoWrapper.style.transform = 'translateX(-50%) scale(0.3)';
-//                 // logoWrapper.style.transition = `transform 0s`;
-//             }
-//         });
-//     }, 3000);
-// });
-
 
 var x, i, j, l, ll, selElmnt, a, b, c;
 x = document.getElementsByClassName("custom-select");
@@ -194,15 +111,22 @@ function closeAllSelect(elmnt) {
         }
     }
 
-    console.log("pashol nahuy");
-
     document.querySelector('.top-lang').classList.remove('active');
     document.querySelector('.top-lang-items').style.width = '0px';
-    // document.querySelector('.top-lang-btn').classList.remove('active');
 }
 
 function openModal() {
-    document.getElementById('modal').style.display = 'block';
+    var modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+    modal.style.display = 'block';
+
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var modalHeight = modalContent.offsetHeight;
+    var windowHeight = window.innerHeight;
+
+    var topPosition = Math.max(0, (windowHeight - modalHeight) / 2 + scrollTop);
+
+    modalContent.style.top = topPosition + 'px';
 }
 
 function closeModal() {
@@ -224,7 +148,7 @@ function changeColor(inputElement) {
     const inputCheckGroups = wrapper.querySelectorAll('.input-check-group');
 
     inputCheckGroups.forEach((inputCheckGroup) => {
-        const input = inputCheckGroup.querySelector('.input');
+        const input = inputCheckGroup.querySelector('.input-check');
         if (input === inputElement) {
             inputCheckGroup.classList.add('active');
             inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = '#d7d7d758';
@@ -240,7 +164,7 @@ function changeColorLight(inputElement) {
     const inputCheckGroups = wrapper.querySelectorAll('.input-check-group');
 
     inputCheckGroups.forEach((inputCheckGroup) => {
-        const input = inputCheckGroup.querySelector('.input');
+        const input = inputCheckGroup.querySelector('.input-check');
         if (input === inputElement) {
             inputCheckGroup.classList.add('active');
             inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.150)';
@@ -257,11 +181,6 @@ function displayFileName(input) {
     fileInputLabel.textContent = fileName;
     fileInputLabel.setAttribute('data-file-name', fileName);
 }
-
-// const image = document.getElementById("image");
-// image.style.height = "55vh";
-// image.src = "./nightPng.png";
-// logo.classList.add("header-top");
 
 document.getElementById('mode-switch').addEventListener('click', function () {
     var modeSwitch = document.getElementById('mode-switch');
@@ -291,12 +210,6 @@ document.querySelector('.top-lang').addEventListener('click', function (e) {
         }
 
         langItems.style.left = '0px';
-
-        // document.addEventListener('click', function closeLangDropdown() {
-        //     langBtn.classList.remove('active');
-        //     langItems.style.width = '0px';
-        //     document.removeEventListener('click', closeLangDropdown);
-        // });
     } else {
         langBtn.classList.remove('active');
         langItems.style.width = '0px';
