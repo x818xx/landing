@@ -3,7 +3,7 @@
 
 :root {
   --text-color: #323232;
-  --background-color: rgba(226, 206, 208, 0.5);
+  --background-color: rgba(255, 255, 255, 0.5);
   --box-shadow-color: rgba(31, 38, 135, 0.083);
   --border-color: rgba(255, 255, 255, 0.041);
   --select-items-background-color: rgba(255, 255, 255, 1);
