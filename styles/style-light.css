@@ -159,7 +159,7 @@
     font-family: 'Marmelad', sans-serif;
     position: relative;
     /* background-image: url('black-background.png'); */
-    background: linear-gradient(to bottom, #ffffff 0%, #ab80df 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, rgb(235, 103, 103) 100%);
     transition: background 0.5s ease;
     background-size: cover;
     background-position: center center;
