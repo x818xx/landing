@@ -158,16 +158,15 @@
     height: 100%;
     font-family: 'Marmelad', sans-serif;
     position: relative;
-    /* background-image: url('black-background.png'); */
-    background: linear-gradient(to bottom, #000000 0%, #2a0000 100%);
-    transition: background 0.5s ease;
+    background: linear-gradient(to bottom, #ffffff 0%, rgb(235, 103, 103) 100%);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     filter: brightness(70%);
-    background-attachment: fixed;
+    background-attachment: scroll; /* Змінив fixed на scroll */
     font-size: 10px;
-  }
+}
+
 
   .logo-position {
     position: relative;
