@@ -6,7 +6,7 @@
   --background-color: rgba(255, 255, 255, 0.102);
   --box-shadow-color: rgba(31, 38, 135, 0.083);
   --border-color: rgba(255, 255, 255, 0.041);
-  --select-items-background-color: rgba(128, 128, 128, 1);
+  --select-items-background-color: rgba(128, 128, 128, 0.1);
   --custom-height-select: 5.7vh;
   --custom-height-check-input: 5.8vh;
   --custom-height-select-mobile: 4vh;
@@ -55,7 +55,7 @@
   }
 
   .logo-wrapper.expanded.place-header {
-    transform: translate(-50%, -120%) scale(0.4);
+    transform: translate(-50%, -115%) scale(0.5);
   }
 
   .top-lang {
@@ -136,25 +136,25 @@
     right: 6.7vw;
     opacity: 0;
     transition: opacity 1.5s ease;
-    padding: 10px;
 
-    background: var(--background-color);
-    box-shadow: 0 8px 32px 0 var(--box-shadow-color);
-    backdrop-filter: blur(2.5px);
-    -webkit-backdrop-filter: blur(2.5px);
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
   }
 
   .info-link {
     display: flex;
     align-items: center;
     text-decoration: none;
+
+    padding: 5px;
+    background: var(--background-color);
+    box-shadow: 0 8px 32px 0 var(--box-shadow-color);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    margin-right: 10px;
   }
 
-  .info-image {
-    margin-right: 20px;
-  }
+  .info-image {}
 
   .mode-switch {
     display: flex;
@@ -164,6 +164,14 @@
     user-select: none;
     fill: var(--text-color);
     cursor: pointer;
+
+    padding: 5px;
+    background: var(--background-color);
+    box-shadow: 0 8px 32px 0 var(--box-shadow-color);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
   }
 
   .content {
@@ -628,7 +636,6 @@
   border-radius: 10px;
   width: 100%;
   box-sizing: border-box;
-  /* Додайте цей рядок для врахування padding у розрахунку ширини */
   position: relative;
 }
 
@@ -651,38 +658,6 @@
   border-radius: 5px;
   padding: 0 .4em;
   color: #fff;
-}
-
-#fileInputContainer {
-  border-radius: 10px;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Marmelad', sans-serif;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-}
-
-#fileInput {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-#fileInputLabel {
-  font-family: 'Marmelad', sans-serif;
-  color: var(--text-color);
-  position: relative;
-  cursor: pointer;
 }
 
 .library-select {
@@ -732,6 +707,43 @@
   overflow-y: auto;
   background: var(--select-items-background-color) !important;
   color: var(--text-color);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px !important;
+  border: 0px solid var(--border-color) !important;
+}
+
+.select2-results__option {
+  color: var(--text-color);
+  /* padding: 8px 16px; */
+  min-height: 30px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  height: var(--custom-height-select);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select2-search--dropdown {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px !important;
+}
+
+.select2-search__field {
+  font-family: 'Marmelad', sans-serif;
+  padding: 0.5rem 0.8em !important;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border: 0px solid var(--text-color);
+  border-radius: 10px;
+  width: 95% !important;
+  box-sizing: border-box !important;
+  position: relative;
 }
 
 .custom-select {
@@ -797,16 +809,15 @@
 .select-items {
   position: absolute;
   background: var(--select-items-background-color);
-  top: 90%;
+  top: 100%;
   left: 0;
   right: 0;
   z-index: 99;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   max-height: 400px;
-  /* Максимальна висота списку */
+  border-radius: 10px;
   overflow-y: auto;
-  /* Додано прокрутку при необхідності */
 }
 
 
@@ -828,7 +839,7 @@
 
 .custom-select.select-down .select-items {
   top: auto;
-  bottom: 80%;
+  bottom: 110%;
 }
 
 .modal {
