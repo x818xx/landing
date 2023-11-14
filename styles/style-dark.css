@@ -154,8 +154,6 @@
     margin-right: 10px;
   }
 
-  .info-image {}
-
   .mode-switch {
     display: flex;
     justify-content: center;
@@ -232,7 +230,6 @@
     background-attachment: scroll;
     font-size: 10px;
   }
-
 
   .logo-position {
     position: relative;
@@ -385,10 +382,6 @@
     width: 100%;
   }
 
-  .form-container-right {
-    width: 80%;
-  }
-
   .content {
     margin-top: 30px;
     opacity: 0;
@@ -460,10 +453,6 @@
   opacity: 1;
 }
 
-.menu-icon.display {
-  opacity: 1;
-}
-
 .form-group {
   margin-bottom: 20px;
   text-align: center;
@@ -495,13 +484,6 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-}
-
-.form-details-group-flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
 }
 
 .form-group-label {
@@ -593,31 +575,9 @@
   height: var(--custom-height-check-input);
 }
 
-.form-group-input-container-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 8vh;
-}
-
-.form-group-input-container-inputs {
-  display: flex;
-  justify-content: center;
-}
-
 .center-check-item {
   margin-left: 10px;
   margin-right: 10px;
-}
-
-.select-left {
-  position: relative;
-  left: 5%;
-}
-
-.select-right {
-  position: relative;
-  right: 5%;
 }
 
 .input-group {
@@ -627,7 +587,6 @@
 .text-input {
   font-family: 'Marmelad', sans-serif;
   padding: 0.8rem 0.8em;
-  /* Підтримка для старіших браузерів */
   font-size: 1rem;
   color: var(--text-color);
   transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1), padding 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -674,7 +633,6 @@
   border-radius: 10px;
   border: 1px solid var(--border-color);
   outline: none;
-  /* Запобігає відображенню рамки при фокусі */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -691,10 +649,8 @@
 
 .select2-container .select2-selection--single {
   height: auto;
-  /* Змініть на бажаний колір межі */
   display: flex !important;
   align-items: center;
-  /* Змініть на бажаний радіус межі */
 }
 
 .select2-selection__rendered {
@@ -715,7 +671,6 @@
 
 .select2-results__option {
   color: var(--text-color);
-  /* padding: 8px 16px; */
   min-height: 30px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
@@ -784,7 +739,6 @@
 .select-items div,
 .select-selected {
   color: var(--text-color);
-  /* padding: 8px 16px; */
   min-height: 30px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
@@ -794,17 +748,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* .select-items {
-  position: absolute;
-  background: var(--select-items-background-color);
-  top: 90%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-} */
 
 .select-items {
   position: absolute;
@@ -842,37 +785,7 @@
   bottom: 110%;
 }
 
-.modal {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modal-content {
-  font-family: 'Marmelad', sans-serif;
-  position: absolute;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  width: 50%;
-}
-
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
+/*SEND BUTTON*/
 
 .send-button-container {
   display: flex;
@@ -947,10 +860,43 @@
   align-items: center;
 }
 
-.link-item {
-  height: 8vh;
+/*SEND BUTTON END*/
+
+/*MODAL*/
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
+.modal-content {
+  font-family: 'Marmelad', sans-serif;
+  position: absolute;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 50%;
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/*MODAL END*/
 
 
 @media screen and (max-width: 767px) {
@@ -976,6 +922,10 @@
   }
 
   .text-input {
+    font-size: 12px;
+  }
+
+  .select2-search__field {
     font-size: 12px;
   }
 
