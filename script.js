@@ -18,14 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.propertyName === "transform") {
                 if (getWindowWidth() < 768) {
                     logoWrapper.classList.add("fix-position");
-                    document.querySelector('.menu-icon').classList.add("display");
+                    document.getElementById("mode-switch-mobile").classList.add("display");
+                    document.getElementById("info-container-mobile").classList.add("display");
                     logoPosition.style.height = '18vh';
                 } else {
+                    info.classList.add("display");
                     logoPosition.style.height = '22vh';
                 }
                 document.getElementById("content").classList.add("display");
                 document.getElementById("language-select").classList.add("display");
-                info.classList.add("display");
                 logoWrapper.style.position = 'absolute';
             }
         });
@@ -139,8 +140,6 @@ window.onclick = function (event) {
     var lang = document.getElementById("langSelect");
     var modal = document.getElementById('modal');
     var closeBtn = document.querySelector('.close');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const linksList = document.querySelector('.links-list');
 
     if (event.target === modal || event.target === closeBtn) {
         closeModal();
@@ -150,19 +149,8 @@ window.onclick = function (event) {
         return;
     }
 
-    if (mobileMenu.classList.contains("opened") && !linksList.contains(event.target) && !document.getElementById("menu-icon").contains(event.target)) {
-        document.getElementById('mobile-menu').style.width = '0';
-        document.getElementById('mobile-menu').classList.remove("opened");
-    }
-
     closeAllSelect();
 };
-
-document.getElementById('menu-icon').addEventListener('click', function () {
-    console.log('Menu icon clicked');
-    document.getElementById('mobile-menu').style.width = '70%';
-    document.getElementById('mobile-menu').classList.add("opened");
-});
 
 function changeColor(inputElement) {
     const wrapper = inputElement.closest('.wrapper');
