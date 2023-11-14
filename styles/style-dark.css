@@ -896,6 +896,7 @@
 }
 
 .send-button:hover {
+  cursor: pointer;
   transform: translateY(-3px);
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
@@ -986,6 +987,14 @@
   .text-input:focus~.user-label,
   .text-input:valid~.user-label {
     transform: translate(-50%, -215%) scale(0.8);
+  }
+
+  .select2 {
+    height: var(--custom-height-select-mobile);
+  }
+
+  .select2-results__option {
+    height: var(--custom-height-select-mobile);
   }
 
 }
