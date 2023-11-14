@@ -316,6 +316,10 @@ window.onclick = function (event) {
     closeAllSelect();
 };
 
+function showVerticalAlert(){
+    alert("Тимчасово доступний тільки гемблінг.");
+}
+
 function changeColor(inputElement) {
     const wrapper = inputElement.closest('.wrapper');
     const inputCheckGroups = wrapper.querySelectorAll('.input-check-group');
@@ -341,6 +345,18 @@ function changeMultiplyColor(inputElement) {
     } else {
         inputCheckGroup.classList.add('active');
         inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = '#d7d7d758';
+    }
+}
+
+function changeMultiplyColorLight(inputElement) {
+    const inputCheckGroup = inputElement.closest('.input-check-group');
+
+    if (inputCheckGroup.classList.contains("active")) {
+        inputCheckGroup.classList.remove('active');
+        inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.150)';
+    } else {
+        inputCheckGroup.classList.add('active');
+        inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.00)';
     }
 }
 
