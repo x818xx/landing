@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const logo = document.getElementById("logo");
     const logoPosition = document.getElementById("logo-position");
     const logoWrapper = document.querySelector('.logo-wrapper');
-    const mode = document.getElementById("mode-switch");
+    const info = document.getElementById("info-container");
 
     setTimeout(() => {
         logo.classList.add("expanded");
@@ -18,13 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
             if (event.propertyName === "transform") {
                 if (getWindowWidth() < 768) {
                     logoWrapper.classList.add("fix-position");
+                    document.querySelector('.menu-icon').classList.add("display");
                     logoPosition.style.height = '18vh';
                 } else {
                     logoPosition.style.height = '22vh';
                 }
                 document.getElementById("content").classList.add("display");
                 document.getElementById("language-select").classList.add("display");
-                mode.classList.add("display");
+                info.classList.add("display");
                 logoWrapper.style.position = 'absolute';
             }
         });
@@ -134,9 +135,13 @@ function closeModal() {
 }
 
 window.onclick = function (event) {
+    console.log('Window clicked');
     var lang = document.getElementById("langSelect");
     var modal = document.getElementById('modal');
     var closeBtn = document.querySelector('.close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const linksList = document.querySelector('.links-list');
+
     if (event.target === modal || event.target === closeBtn) {
         closeModal();
     }
@@ -145,8 +150,19 @@ window.onclick = function (event) {
         return;
     }
 
+    if (mobileMenu.classList.contains("opened") && !linksList.contains(event.target) && !document.getElementById("menu-icon").contains(event.target)) {
+        document.getElementById('mobile-menu').style.width = '0';
+        document.getElementById('mobile-menu').classList.remove("opened");
+    }
+
     closeAllSelect();
 };
+
+document.getElementById('menu-icon').addEventListener('click', function () {
+    console.log('Menu icon clicked');
+    document.getElementById('mobile-menu').style.width = '70%';
+    document.getElementById('mobile-menu').classList.add("opened");
+});
 
 function changeColor(inputElement) {
     const wrapper = inputElement.closest('.wrapper');
@@ -162,6 +178,18 @@ function changeColor(inputElement) {
             inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.00)';
         }
     });
+}
+
+function changeMultiplyColor(inputElement) {
+    const inputCheckGroup = inputElement.closest('.input-check-group');
+
+    if (inputCheckGroup.classList.contains("active")) {
+        inputCheckGroup.classList.remove('active');
+        inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.00)';
+    } else {
+        inputCheckGroup.classList.add('active');
+        inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = '#d7d7d758';
+    }
 }
 
 function changeColorLight(inputElement) {
@@ -202,7 +230,7 @@ document.querySelector('.top-lang').addEventListener('click', function (e) {
     var langItems = document.querySelector('.top-lang-items');
     console.log("PASHOL NAHUY FIRST");
 
-    if(!langItems.contains(e.target)){
+    if (!langItems.contains(e.target)) {
         e.preventDefault();
         e.stopPropagation();
         if (!langBtn.classList.contains('active')) {
@@ -214,7 +242,7 @@ document.querySelector('.top-lang').addEventListener('click', function (e) {
             } else {
                 langItems.style.width = '185px';
             }
-    
+
             langItems.style.left = '0px';
         } else {
             langBtn.classList.remove('active');
