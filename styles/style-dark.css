@@ -195,6 +195,14 @@
   .form-container {
     width: 80%;
   }
+
+  .send-button-container-mobile {
+    display: none;
+  }
+
+  .tg-mobile {
+    display: none;
+  }
 }
 
 
@@ -378,6 +386,33 @@
     opacity: 0;
     transition: opacity 2.5s ease;
   }
+
+  .complete-order {
+    display: none;
+  }
+
+  .send-button-container-mobile {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0px;
+  }
+
+  .tg-mobile {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-group-input-item-mobile {
+    width: 70%;
+  }
+
+  .form-input-group-item-mobile {
+    width: 100%;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -445,6 +480,13 @@
 
 .form-group-input-item {
   width: 45%;
+}
+
+.form-group-input-button {
+  width: 45%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .form-details-group-flex {
@@ -656,7 +698,8 @@
   box-shadow: 0 8px 32px 0 var(--box-shadow-color);
   border-radius: 10px;
   border: 1px solid var(--border-color);
-  outline: none; /* Запобігає відображенню рамки при фокусі */
+  outline: none;
+  /* Запобігає відображенню рамки при фокусі */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -672,13 +715,15 @@
 }
 
 .select2-container .select2-selection--single {
-  height: auto; /* Змініть на бажаний колір межі */
+  height: auto;
+  /* Змініть на бажаний колір межі */
   display: flex !important;
-  align-items: center; /* Змініть на бажаний радіус межі */
+  align-items: center;
+  /* Змініть на бажаний радіус межі */
 }
 
-.select2-selection__rendered{
-  color:var(--text-color);
+.select2-selection__rendered {
+  color: var(--text-color);
   padding: 0px !important;
 }
 
@@ -826,7 +871,7 @@
 
 .send-button {
   font-family: inherit;
-  font-size: 18px;
+  font-size: 15px;
   background: var(--background-color);
   padding: 0.8em 1.2em;
   display: flex;
@@ -836,6 +881,7 @@
   border-radius: 25px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
+  width: 100%;
 }
 
 .send-button:hover {
@@ -914,6 +960,7 @@
 
   .send-button {
     font-size: 12px;
+    width: 70%;
   }
 
   .text-input {
