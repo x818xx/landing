@@ -671,7 +671,6 @@
 
 .select2-results__option {
   color: var(--text-color);
-  min-height: 30px;
   border: 1px solid transparent;
   border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
@@ -944,6 +943,7 @@
   }
 
   .select2-results__option {
+    padding: 0px !important;
     height: var(--custom-height-select-mobile);
   }
 
