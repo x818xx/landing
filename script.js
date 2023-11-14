@@ -376,15 +376,18 @@ function changeColorLight(inputElement) {
     });
 }
 
-function displayFileName(input) {
-    const fileName = input.files[0].name;
-    const fileInputLabel = document.getElementById('fileInputLabel');
-    fileInputLabel.textContent = fileName;
-    fileInputLabel.setAttribute('data-file-name', fileName);
-}
-
 document.getElementById('mode-switch').addEventListener('click', function () {
     var modeSwitch = document.getElementById('mode-switch');
+
+    if (modeSwitch.classList.contains('night')) {
+        window.location.href = "index-light.html"
+    } else if (modeSwitch.classList.contains('sun')) {
+        window.location.href = "index.html"
+    }
+});
+
+document.getElementById('mode-switch-mobile').addEventListener('click', function () {
+    var modeSwitch = document.getElementById('mode-switch-mobile');
 
     if (modeSwitch.classList.contains('night')) {
         window.location.href = "index-light.html"
