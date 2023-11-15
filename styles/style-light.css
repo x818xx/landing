@@ -493,6 +493,10 @@
   justify-content: center;
 }
 
+.small-label {
+  font-size: 14px;
+}
+
 .wrapper {
   min-height: 30px;
   position: relative;
@@ -756,7 +760,7 @@
   z-index: 99;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  max-height: 400px;
+  max-height: 250px;
   border-radius: 10px;
   overflow-y: auto;
 }
