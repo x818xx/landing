@@ -149,7 +149,7 @@
     box-shadow: 0 8px 32px 0 var(--box-shadow-color);
     backdrop-filter: blur(2.5px);
     -webkit-backdrop-filter: blur(2.5px);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     border: 1px solid var(--border-color);
     margin-right: 10px;
   }
@@ -168,7 +168,7 @@
     box-shadow: 0 8px 32px 0 var(--box-shadow-color);
     backdrop-filter: blur(2.5px);
     -webkit-backdrop-filter: blur(2.5px);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     border: 1px solid var(--border-color);
   }
 
@@ -208,6 +208,40 @@
 
   .tg-mobile {
     display: none;
+  }
+
+  .popup-container {
+    position: fixed;
+    top: 40px;
+    right: 6.7vw;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .popup-error {
+    background-color: #ff5757;
+  }
+
+  .popup-success {
+    background-color: #4CAF50;
+  }
+
+  .popup-container.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
   }
 }
 
@@ -414,6 +448,35 @@
   .form-input-group-item-mobile {
     width: 100%;
   }
+
+  .popup-container {
+    position: fixed;
+    top: 40px;
+    /* right: 6.7vw; */
+    align-items: center;
+    width: 80%;
+    padding: 10px 20px;
+    background-color: #ff5757;
+    color: #fff;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .popup-container.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -550,6 +613,11 @@
   cursor: pointer;
 }
 
+.input-check-group:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
 .input-check-name {
   width: 100%;
   height: 100%;
@@ -579,13 +647,33 @@
   height: var(--custom-height-check-input);
 }
 
+.choose-input-group {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-link {
+  height: var(--custom-height-check-input);
+}
+
+.offer-link {
+  height: var(--custom-height-check-input);
+}
+
 .center-check-item {
   margin-left: 10px;
   margin-right: 10px;
 }
 
 .input-group {
+  width: 100%;
   position: relative;
+}
+
+.back-image {
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 .text-input {
@@ -870,27 +958,42 @@
 
 .modal {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
 }
 
 .modal-content {
   font-family: 'Marmelad', sans-serif;
   position: absolute;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 5px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 40%;
   width: 50%;
+
+  background: var(--background-color);
+  box-shadow: 0 8px 32px 0 var(--box-shadow-color);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
 }
 
+.modal-body {
+  margin-top: 20px;
+}
 
 .close {
   position: absolute;
@@ -899,6 +1002,15 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+
+.modal-body img {
+  /* transform: scale(0.5); */
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 
 /*MODAL END*/
 
@@ -950,6 +1062,14 @@
   .select2-results__option {
     padding: 0px !important;
     height: var(--custom-height-select-mobile);
+  }
+
+  .app-link {
+    height: var(--custom-height-check-input-mobile);
+  }
+  
+  .offer-link {
+    height: var(--custom-height-check-input-mobile);
   }
 
 }

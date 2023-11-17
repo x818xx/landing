@@ -87,30 +87,29 @@
               </label>
               <div class="form-group-input-container">
                 <div class="wrapper" id="verticalSelect1">
-                  <div class="input-check-group option-4">
-                    <input class="input-check" type="radio" name="input-check-name" value="Гемблінг" checked=""
-                      onclick="changeColor(this)">
+                  <div class="input-check-group option-4 active" style="background: #d7d7d758; border-radius: 10px;">
+                    <input class="input-check" type="radio" name="input-check-name" value="Гемблінг" checked="">
                     <div class="input-check-name">
                       <span class="input-check-name-span">Гемблінг</span>
                     </div>
                   </div>
                   <div class="input-check-group option-4">
                     <input class="input-check" type="radio" name="input-check-name" value="Нутра"
-                      onclick="showVerticalAlert()">
+                      onclick="showPopup('Тимчасово доступний тільки гемблінг.')">
                     <div class="input-check-name">
                       <span class="input-check-name-span">Нутра</span>
                     </div>
                   </div>
                   <div class="input-check-group option-4">
                     <input class="input-check" type="radio" name="input-check-name" value="Дейтінг"
-                      onclick="showVerticalAlert()">
+                      onclick="showPopup('Тимчасово доступний тільки гемблінг.')">
                     <div class="input-check-name">
                       <span class="input-check-name-span">Дейтінг</span>
                     </div>
                   </div>
                   <div class="input-check-group option-4">
                     <input class="input-check" type="radio" name="input-check-name" value="Фінанс"
-                      onclick="showVerticalAlert()">
+                      onclick="showPopup('Тимчасово доступний тільки гемблінг.')">
                     <div class="input-check-name">
                       <span class="input-check-name-span">Фінанс</span>
                     </div>
@@ -541,10 +540,31 @@
                   </label>
 
                   <div class="form-input-group-item">
-                    <div class="input-group">
-                      <input required="" type="text" name="text" autocomplete="off" class="text-input"
-                        id="offerLinkInput15">
-                      <label class="user-label">Введіть посилання</label>
+                    <div class="wrapper app-link" id="appLinkSelect13">
+                      <div class="input-check-group option-2">
+                        <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
+                          onclick="toggleInput(this)">
+                        <div class="input-check-name">
+                          <span class="input-check-name-span">Так</span>
+                        </div>
+                      </div>
+                      <div class="input-check-group option-2">
+                        <input class="input-check" type="radio" name="input-check-name" value="Ні"
+                          onclick="changeColor(this)">
+                        <div class="input-check-name">
+                          <span class="input-check-name-span">Ні</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="choose-input-group" style="display: none;" id="appLinkGroup">
+                      <div class="input-group">
+                        <input required="" type="text" name="text" autocomplete="off" class="text-input"
+                          id="appLinkInput13">
+                        <label class="user-label">Введіть посилання</label>
+                      </div>
+                      <div class="back-image app-image" onclick="handleBackButton(this)">
+                        <img src="images/back.svg" alt="">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -562,10 +582,31 @@
                     </span>
                   </label>
                   <div class="form-input-group-item">
-                    <div class="input-group">
-                      <input required="" type="text" name="text" autocomplete="off" class="text-input"
-                        id="tgUsernameInput">
-                      <label class="user-label">Введіть посилання</label>
+                    <div class="wrapper offer-link" id="offerLinkSelect14">
+                      <div class="input-check-group option-2">
+                        <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
+                          onclick="toggleInput(this)">
+                        <div class="input-check-name">
+                          <span class="input-check-name-span">Так</span>
+                        </div>
+                      </div>
+                      <div class="input-check-group option-2">
+                        <input class="input-check" type="radio" name="input-check-name" value="Ні"
+                          onclick="changeColor(this)">
+                        <div class="input-check-name">
+                          <span class="input-check-name-span">Ні</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="choose-input-group" style="display: none;" id="offerLinkGroup">
+                      <div class="input-group">
+                        <input required="" type="text" name="text" autocomplete="off" class="text-input"
+                          id="offerLinkInput14">
+                        <label class="user-label">Введіть посилання</label>
+                      </div>
+                      <div class="back-image offer-image" onclick="handleBackButton(this)">
+                        <img src="images/back.svg" alt="">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -586,7 +627,7 @@
                 </span>
               </label>
               <div class="form-group-input-container">
-                <div class="wrapper" id="deadlineSelect14">
+                <div class="wrapper" id="deadlineSelect15">
                   <div class="input-check-group option-2">
                     <input class="input-check" type="radio" name="input-check-name" value="Стандарт (1-2дні)" checked=""
                       onclick="changeColor(this)">
@@ -649,7 +690,7 @@
                 <div class="form-input-group-item-mobile">
                   <div class="input-group">
                     <input required="" type="text" name="text" autocomplete="off" class="text-input"
-                      id="tgUsernameInput">
+                      id="tgUsernameInputMobile">
                     <label class="user-label">Введіть @username</label>
                   </div>
                 </div>
@@ -657,7 +698,7 @@
             </div>
 
             <div class="send-button-container-mobile">
-              <button class="send-button" id="sendButton">
+              <button class="send-button" id="sendButtonMobile">
                 <div class="svg-wrapper-1">
                   <div class="svg-wrapper">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -694,10 +735,21 @@
       <span class="close" onclick="closeModal()">&times;</span>
       <h3>Пояснення</h3>
       <div class="modal-body">
-        <!-- <img src="your-image.jpg" alt="Your Image"> -->
-        <p>*Тут буде картинка</p>
+        <!-- <img src="images/Test.png" class="modal-image" alt="Test"> -->
+        <img src="images/Test2.png" alt="Test">
       </div>
     </div>
+  </div>
+
+
+  <div id="errorPopup" class="popup-container popup-error">
+    <span class="close-btn" onclick="closePopup('errorPopup')">×</span>
+    <p id="errorText">Виникла помилка! Це повідомлення зникне через 5 секунд.</p>
+  </div>
+
+  <div id="successPopup" class="popup-container popup-success">
+    <span class="close-btn" onclick="closePopup('successPopup')">×</span>
+    <p id="successText">Дякуємо! Ваше замовлення успішно відправлене.</p>
   </div>
 
   <script src="js/script.js"></script>

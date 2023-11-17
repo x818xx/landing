@@ -157,6 +157,10 @@ $(document).ready(function () {
         width: '100%'
     });
 
+
+    $('#countrySelect').val(null);
+    $('#languageSelect').val(null);
+
     $('#select2-countrySelect-container').html('Виберіть ГЕО');
     $('#select2-languageSelect-container').html('Виберіть мову');
 });

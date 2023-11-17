@@ -1,3 +1,5 @@
+var langValue = document.documentElement.lang;
+
 function getWindowWidth() {
     return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 }
@@ -94,6 +96,17 @@ for (i = 0; i < l; i++) {
     });
 }
 
+function toggleInput(radio) {
+    const wrapper = radio.closest('.wrapper');
+
+    wrapper.style.display = 'none';
+    if (wrapper.classList.contains('app-link')) {
+        document.getElementById("appLinkGroup").style.display = 'flex';
+    } else {
+        document.getElementById("offerLinkGroup").style.display = 'flex';
+    }
+}
+
 function closeAllSelect(elmnt) {
     var x, y, i, xl, yl, arrNo = [];
     x = document.getElementsByClassName("select-items");
@@ -122,13 +135,13 @@ function openModal() {
     const modalContent = document.getElementById('modal-content');
     modal.style.display = 'block';
 
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var modalHeight = modalContent.offsetHeight;
-    var windowHeight = window.innerHeight;
+    // var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // var modalHeight = modalContent.offsetHeight;
+    // var windowHeight = window.innerHeight;
 
-    var topPosition = Math.max(0, (windowHeight - modalHeight) / 2 + scrollTop);
+    // var topPosition = Math.max(0, (windowHeight - modalHeight) / 2 + scrollTop);
 
-    modalContent.style.top = topPosition + 'px';
+    // modalContent.style.top = topPosition + 'px';
 }
 
 function closeModal() {
@@ -152,10 +165,6 @@ window.onclick = function (event) {
     closeAllSelect();
 };
 
-function showVerticalAlert(){
-    alert("Тимчасово доступний тільки гемблінг.");
-}
-
 function changeColor(inputElement) {
     const wrapper = inputElement.closest('.wrapper');
     const inputCheckGroups = wrapper.querySelectorAll('.input-check-group');
@@ -170,6 +179,17 @@ function changeColor(inputElement) {
             inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.00)';
         }
     });
+}
+
+function handleBackButton(backImage) {
+    const inputGroup = backImage.closest('.choose-input-group');
+    inputGroup.style.display = "none";
+
+    if (backImage.classList.contains('app-image')) {
+        document.getElementById("appLinkSelect13").style.display = 'flex';
+    } else {
+        document.getElementById("offerLinkSelect14").style.display = 'flex';
+    }
 }
 
 function changeMultiplyColor(inputElement) {
@@ -189,10 +209,10 @@ function changeMultiplyColorLight(inputElement) {
 
     if (inputCheckGroup.classList.contains("active")) {
         inputCheckGroup.classList.remove('active');
-        inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.150)';
+        inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.00)';
     } else {
         inputCheckGroup.classList.add('active');
-        inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.00)';
+        inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.150)';
     }
 }
 
@@ -272,104 +292,307 @@ function getActiveSelectText(elementID) {
     return input.value;
 }
 
+function getMultiplyActiveSelectText(elementID) {
+    const wrapper = document.getElementById(elementID);
+    const activeElements = wrapper.querySelectorAll('.active');
+
+    if (!activeElements || activeElements.length === 0) {
+        return;
+    }
+
+    const texts = Array.from(activeElements).map(activeElement => {
+        const input = activeElement.querySelector('.input-check');
+        return input ? input.value : '';
+    });
+
+    return texts.join(', ');
+}
+
+var timeoutId;
+
+document.querySelector('.close-btn').addEventListener('click', function () {
+    closePopup();
+    clearTimeout(timeoutId);
+});
+
+function showPopup(text) {
+    const popup = document.getElementById('errorPopup');
+    popup.classList.add('active');
+
+    const errorText = document.getElementById('errorText');
+    errorText.innerText = text;
+
+    timeoutId = setTimeout(function () {
+        closePopup("errorPopup");
+    }, 3000);
+}
+
+function showSuccessPopup(){
+    const popup = document.getElementById('successPopup');
+    popup.classList.add('active');
+
+    timeoutId = setTimeout(function () {
+        closePopup("successPopup");
+    }, 3000);
+}
+
+function closePopup(id) {
+    var popup = document.getElementById(id);
+    popup.classList.remove('active');
+}
+
 document.getElementById("sendButton").addEventListener('click', function () {
+    getInput("PC");
+});
+
+document.getElementById("sendButtonMobile").addEventListener('click', function () {
+    getInput("Mobile");
+});
+
+function getInput(type) {
     const vertical = getActiveSelectText("verticalSelect1");
     if (!vertical) {
-        alert('Choose a vertical !');
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть вертикаль.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
-    const geoSelect = document.getElementById("geoSelect2");
-    const geoSelected = geoSelect.options[geoSelect.selectedIndex];
-    if (geoSelected.value == "0") {
-        alert('Choose a geo !');
+    const geoSelected = $('#countrySelect').val();
+    if (geoSelected == null) {
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть ГЕО.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
-    const languageSelect = document.getElementById("languageSelect3");
-    const languageSelected = languageSelect.options[languageSelect.selectedIndex];
-    if (languageSelected.value == "0") {
-        alert('Choose a language !');
+    const languageSelected = $('#languageSelect').val();
+    if (languageSelected == null) {
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть мову.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
     const traff = getActiveSelectText("traffSelect4");
     if (!traff) {
-        alert('Choose a traff source !');
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть джерело трафіку.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
-    const size = getActiveSelectText("sizeSelect5");
+    const size = getMultiplyActiveSelectText("sizeSelect5");
     if (!size) {
-        alert('Choose a size !');
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть розмір креативу.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
     const length = getActiveSelectText("lengthSelect6");
     if (!length) {
-        alert('Choose a length !');
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть тривалість креативу.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
     const themaSelect = document.getElementById("themaSelect7");
     const themaSelected = themaSelect.options[themaSelect.selectedIndex];
     if (themaSelected.value == "0") {
-        alert('Choose a theme !');
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть тему креативу.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
     const gameTypeSelect = document.getElementById("gameTypeSelect8");
     const gameTypeSelected = gameTypeSelect.options[gameTypeSelect.selectedIndex];
     if (gameTypeSelected.value == "0") {
-        alert('Choose a game !');
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть тип гри.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
-    const os = getActiveSelectText("osSelect9");
+    const os = getMultiplyActiveSelectText("osSelect9");
     if (!os) {
-        alert('Choose a OS !');
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть операційну систему.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
     const emotions = getActiveSelectText("emotionsSelect10");
     if (!emotions) {
-        alert('Choose a emotions options !');
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть чи показувати емоції виграшу.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
     const banking = getActiveSelectText("bankingSelect11");
     if (!banking) {
-        alert('Choose a banking options !');
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть чи показувати скрін банкінгу.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
     const push_up = getActiveSelectText("pushUpSelect12");
     if (!push_up) {
-        alert('Choose a Push Up options !');
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть чи показувати Push-Up сповіщення.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
-    const app_name = document.getElementById("appNameInput13").value;
-    if (app_name.length < 3) {
-        alert("App name input is empty !");
+    const app_link = document.getElementById("appLinkInput13").value;
+    if (app_link.length < 3) {
+        alert("App link input is empty !");
         return;
     }
 
-    const deadline = getActiveSelectText("deadlineSelect14");
-    if (!deadline) {
-        alert('Choose a deadline !');
-        return;
-    }
-
-    const offer = document.getElementById("offerLinkInput15").value;
+    const offer = document.getElementById("offerLinkInput14").value;
     if (offer.length < 3) {
         alert("Offer link input is empty !");
         return;
     }
 
-    const tg_username = document.getElementById("tgUsernameInput").value;
-    if (tg_username.length < 3) {
-        alert("TG Username input is empty !");
+    const deadline = getActiveSelectText("deadlineSelect15");
+    if (!deadline) {
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Виберіть термін виконання.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
+        return;
+    }
+
+    var tg_username;
+
+    if (type == "Mobile") {
+        tg_username = document.getElementById("tgUsernameInputMobile").value;
+    } else {
+        tg_username = document.getElementById("tgUsernameInput").value;
+    }
+
+    const usernameWithoutAt = tg_username.replace(/@/g, '');
+    if (usernameWithoutAt.length < 3) {
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Введіть телеграм @username.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
@@ -377,8 +600,8 @@ document.getElementById("sendButton").addEventListener('click', function () {
         id: generateRandomNumber(),
         time: getFormattedTimeWithTimeZone(),
         vertical: vertical,
-        geo: geoSelected.value,
-        language: languageSelected.value,
+        geo: geoSelected,
+        language: languageSelected,
         traff: traff,
         size: size,
         length: length,
@@ -388,23 +611,23 @@ document.getElementById("sendButton").addEventListener('click', function () {
         emotions: emotions,
         banking: banking,
         push_up: push_up,
-        app_name: app_name,
-        deadline: deadline,
+        app_link: app_link,
         offer: offer,
-        tg_username: tg_username
+        deadline: deadline,
+        tg_username: usernameWithoutAt
     }
 
     console.log(data);
 
     axios.post('/order.php', data)
         .then((response) => {
-            alert("Ваше замовлення успішно отримане !");
+            showSuccessPopup();
         })
         .catch((error) => {
             window.location.reload();
         });
 
-});
+}
 
 function generateRandomNumber() {
     const min = 10000000;

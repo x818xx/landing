@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emotions = $data['emotions'];
     $banking = $data['banking'];
     $push_up = $data['push_up'];
-    $app_name = $data['app_name'];
+    $app_link = $data['app_link'];
     $deadline = $data['deadline'];
     $offer = $data['offer'];
     $tg_username = $data['tg_username'];
@@ -43,11 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'Емоції виграшу: ' => $emotions,
         'Скрін банкінгу: ' => $banking,
         'Push-Up: ' => $push_up,
-        'Назва пріли: ' => $app_name,
-        'Термін виконання: ' => $deadline,
+        'Посилання на прілку: ' => $app_link,
         'Посилання на оффер: ' => $offer,
-        'Push-Up: ' => $push_up,
-
+        'Термін виконання: ' => $deadline
     );
 
     foreach ($arr as $key => $value) {
