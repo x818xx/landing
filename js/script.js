@@ -41,8 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
             openModal();
         });
     });
-
-    openSuccessModal(15545148);
 });
 
 var x, i, j, l, ll, selElmnt, a, b, c;
