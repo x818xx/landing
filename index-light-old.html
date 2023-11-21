@@ -26,11 +26,11 @@
           <img src="images/ua.png" alt="lang">
         </a>
         <div class="top-lang-items" id="langSelect">
-          <a class="item a-change-lang" href="ru/index.html">
+          <a class="item a-change-lang" href="ru/index-light.html">
             <img src="images/ru.png" alt="ru">
             <span class="lang__text">Русский</span>
           </a>
-          <a class="item a-change-lang" href="en/index.html">
+          <a class="item a-change-lang" href="en/index-light.html">
             <img src="images/en.png" alt="en">
             <span class="lang__text">English</span>
           </a>
@@ -46,7 +46,7 @@
         <a href="" class="info-link">
           <img src="images/support-black.svg" alt="support" class="info-image">
         </a>
-        <label class="mode-switch night" id="mode-switch">
+        <label class="mode-switch sun" id="mode-switch">
           <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="sun">
             <path
               d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z">
@@ -75,32 +75,42 @@
             <div class="form-group">
               <label class="form-group-label">
                 1. Вертикаль
+                <span class="help-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-help-circle">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                    <line x1="12" y1="17" x2="12.01" y2="17" />
+                  </svg>
+                </span>
               </label>
               <div class="form-group-input-container">
                 <div class="wrapper" id="verticalSelect1">
-                  <div class="input-check-group option-4 active" style="background: rgba(0, 0, 0, 0.25); border-radius: 10px;">
-                    <input class="input-check" type="radio" name="input-check-name" value="Гемблінг" checked="">
+                  <div class="input-check-group option-4">
+                    <input class="input-check" type="radio" name="input-check-name" value="Гемблінг" checked=""
+                      onclick="changeColorLight(this)">
                     <div class="input-check-name">
                       <span class="input-check-name-span">Гемблінг</span>
                     </div>
                   </div>
                   <div class="input-check-group option-4">
                     <input class="input-check" type="radio" name="input-check-name" value="Нутра"
-                      onclick="showPopup('Тимчасово доступний тільки гемблінг.')">
+                      onclick="showVerticalAlert()">
                     <div class="input-check-name">
                       <span class="input-check-name-span">Нутра</span>
                     </div>
                   </div>
                   <div class="input-check-group option-4">
                     <input class="input-check" type="radio" name="input-check-name" value="Дейтінг"
-                      onclick="showPopup('Тимчасово доступний тільки гемблінг.')">
+                      onclick="showVerticalAlert()">
                     <div class="input-check-name">
                       <span class="input-check-name-span">Дейтінг</span>
                     </div>
                   </div>
                   <div class="input-check-group option-4">
                     <input class="input-check" type="radio" name="input-check-name" value="Фінанс"
-                      onclick="showPopup('Тимчасово доступний тільки гемблінг.')">
+                      onclick="showVerticalAlert()">
                     <div class="input-check-name">
                       <span class="input-check-name-span">Фінанс</span>
                     </div>
@@ -255,7 +265,7 @@
 
             <div class="form-group">
               <label class="form-group-label">
-                6. Тривалість
+                6. Довжина
                 <span class="help-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -349,7 +359,7 @@
                 </div>
                 <div class="form-group-input-item">
                   <label class="form-group-label">
-                    8. Тип гри
+                    8. Вид гри
                     <span class="help-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -363,7 +373,7 @@
                   <div class="form-input-group-item">
                     <div class="custom-select select-down">
                       <select id="gameTypeSelect8">
-                        <option value="0">Виберіть тип гри</option>
+                        <option value="0">Виберіть вид гри</option>
                         <option value="Барабан">Барабан</option>
                         <option value="Слоти">Слоти</option>
                         <option value="Стирання">Стирання</option>
@@ -531,31 +541,10 @@
                   </label>
 
                   <div class="form-input-group-item">
-                    <div class="wrapper app-link" id="appLinkSelect13">
-                      <div class="input-check-group option-2">
-                        <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
-                          onclick="toggleInput(this)">
-                        <div class="input-check-name">
-                          <span class="input-check-name-span">Так</span>
-                        </div>
-                      </div>
-                      <div class="input-check-group option-2">
-                        <input class="input-check" type="radio" name="input-check-name" value="Ні"
-                          onclick="changeColorLight(this)">
-                        <div class="input-check-name">
-                          <span class="input-check-name-span">Ні</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="choose-input-group app-link" style="display: none;" id="appLinkGroup">
-                      <div class="input-group">
-                        <input required="" type="text" name="text" autocomplete="off" class="text-input"
-                          id="appLinkInput13">
-                        <label class="user-label">Введіть посилання</label>
-                      </div>
-                      <div class="back-image app-image" onclick="handleBackButton(this)">
-                        <img src="images/back.svg" alt="">
-                      </div>
+                    <div class="input-group">
+                      <input required="" type="text" name="text" autocomplete="off" class="text-input"
+                        id="appLinkInput13">
+                      <label class="user-label">Введіть посилання</label>
                     </div>
                   </div>
                 </div>
@@ -573,31 +562,10 @@
                     </span>
                   </label>
                   <div class="form-input-group-item">
-                    <div class="wrapper offer-link" id="offerLinkSelect14">
-                      <div class="input-check-group option-2">
-                        <input class="input-check" type="radio" name="input-check-name" value="Так" checked=""
-                          onclick="toggleInput(this)">
-                        <div class="input-check-name">
-                          <span class="input-check-name-span">Так</span>
-                        </div>
-                      </div>
-                      <div class="input-check-group option-2">
-                        <input class="input-check" type="radio" name="input-check-name" value="Ні"
-                          onclick="changeColorLight(this)">
-                        <div class="input-check-name">
-                          <span class="input-check-name-span">Ні</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="choose-input-group offer-link" style="display: none;" id="offerLinkGroup">
-                      <div class="input-group">
-                        <input required="" type="text" name="text" autocomplete="off" class="text-input"
-                          id="offerLinkInput14">
-                        <label class="user-label">Введіть посилання</label>
-                      </div>
-                      <div class="back-image offer-image" onclick="handleBackButton(this)">
-                        <img src="images/back.svg" alt="">
-                      </div>
+                    <div class="input-group">
+                      <input required="" type="text" name="text" autocomplete="off" class="text-input"
+                        id="offerLinkInput14">
+                      <label class="user-label">Введіть посилання</label>
                     </div>
                   </div>
                 </div>
@@ -623,7 +591,7 @@
                     <input class="input-check" type="radio" name="input-check-name" value="Стандарт (1-2дні)" checked=""
                       onclick="changeColorLight(this)">
                     <div class="input-check-name">
-                      <span class="input-check-name-span">Стандарт (1-2 дні)</span>
+                      <span class="input-check-name-span">Стандарт (1-2дні)</span>
                     </div>
                   </div>
                   <div class="input-check-group option-2">
@@ -637,7 +605,7 @@
               </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group complete-order">
               <div class="form-group-container-input">
                 <div class="form-group-input-item">
                   <label class="form-group-label">
@@ -651,23 +619,45 @@
                     </div>
                   </div>
                 </div>
-                <div class="form-group-input-item">
-                  <label class="form-group-label">
-                    17. Промокод (необов'язково)
-                  </label>
+                <div class="form-group-input-button">
                   <div class="form-input-group-item">
-                    <div class="input-group">
-                      <input required="" type="text" name="text" autocomplete="off" class="text-input"
-                        id="promocodeInput">
-                      <label class="user-label">Введіть промокод</label>
+                    <div class="send-button-container">
+                      <button class="send-button" id="sendButton">
+                        <div class="svg-wrapper-1">
+                          <div class="svg-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                              <path fill="none" d="M0 0h24v24H0z"></path>
+                              <path fill="currentColor"
+                                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                              </path>
+                            </svg>
+                          </div>
+                        </div>
+                        <span>Надіслати замовлення</span>
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="send-button-container">
-              <button class="send-button" id="sendButton">
+            <div class="form-group tg-mobile">
+              <div class="form-group-input-item-mobile">
+                <label class="form-group-label">
+                  16. Telegram
+                </label>
+                <div class="form-input-group-item-mobile">
+                  <div class="input-group">
+                    <input required="" type="text" name="text" autocomplete="off" class="text-input"
+                      id="tgUsernameInputMobile">
+                    <label class="user-label">Введіть @username</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="send-button-container-mobile">
+              <button class="send-button" id="sendButtonMobile">
                 <div class="svg-wrapper-1">
                   <div class="svg-wrapper">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -684,10 +674,10 @@
 
             <div class="info-container-mobile" id="info-container-mobile">
               <a href="" class="info-link">
-                <img src="images/group.svg" alt="channel" class="info-image">
+                <img src="images/group-black.svg" alt="channel" class="info-image">
               </a>
               <a href="" class="info-link">
-                <img src="images/support.svg" alt="support" class="info-image">
+                <img src="images/support-black.svg" alt="support" class="info-image">
               </a>
             </div>
 
@@ -699,38 +689,15 @@
     </div>
   </div>
 
-  <div id="modalExplain" class="modal">
+  <div id="modal" class="modal">
     <div class="modal-content" id="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
+      <h3>Пояснення</h3>
       <div class="modal-body">
-        <!-- <img src="images/Test.png" class="modal-image" alt="Test"> -->
-        <img src="images/Test2.png" alt="Test">
+        <!-- <img src="your-image.jpg" alt="Your Image"> -->
+        <p>*Тут буде картинка</p>
       </div>
     </div>
-  </div>
-
-  <div id="modalSuccess" class="modal black-overlay">
-    <div class="modal-success-content" id="modal-success-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h3>Дякуємо за замовлення <span id="order_id">#123465</span></h3>
-      <h4 style="margin-top: 10px;">Очікуйте повідомлення від менеджера</h4>
-      <div class="modal-buttons">
-        <a class="modal-button">
-          <img src="images/group.svg" alt="channel" class="info-image-modal">
-          Наш канал
-        </a>
-        <a class="modal-button">
-          <img src="images/support.svg" alt="support" class="info-image-modal">
-          Наша підтримка
-        </a>
-      </div>
-    </div>
-  </div>
-
-
-  <div id="errorPopup" class="popup-container popup-error">
-    <span class="close-btn" onclick="closePopup('errorPopup')">×</span>
-    <p id="errorText">Виникла помилка! Це повідомлення зникне через 5 секунд.</p>
   </div>
 
   <script src="js/script.js"></script>

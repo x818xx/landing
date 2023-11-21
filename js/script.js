@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    openSuccessModal(15456465);
+    openSuccessModal(15545148);
 });
 
 var x, i, j, l, ll, selElmnt, a, b, c;
@@ -134,27 +134,12 @@ function closeAllSelect(elmnt) {
 
 function openModal() {
     var modal = document.getElementById('modalExplain');
-    // const modalContent = document.getElementById('modal-content');
     modal.style.display = 'block';
-
-    // var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    // var modalHeight = modalContent.offsetHeight;
-    // var windowHeight = window.innerHeight;
-
-    // var topPosition = Math.max(0, (windowHeight - modalHeight) / 2 + scrollTop);
-
-    // modalContent.style.top = topPosition + 'px';
 }
 
 function openSuccessModal(id) {
     var modal = document.getElementById('modalSuccess');
-    // document.getElementById("order_id").innerText = "#" + id;
-    // const modalContent = document.getElementById('modal-success-content');
     modal.style.display = 'block';
-
-    // var topPosition = Math.max(0, (window.innerHeight - modalContent.clientHeight) / 2 + window.pageYOffset);
-
-    // modalContent.style.top = topPosition + 'px';
 }
 
 function closeModal() {
@@ -228,7 +213,7 @@ function changeMultiplyColorLight(inputElement) {
         inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.00)';
     } else {
         inputCheckGroup.classList.add('active');
-        inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.150)';
+        inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.250)';
     }
 }
 
@@ -240,7 +225,7 @@ function changeColorLight(inputElement) {
         const input = inputCheckGroup.querySelector('.input-check');
         if (input === inputElement) {
             inputCheckGroup.classList.add('active');
-            inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.150)';
+            inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.250)';
         } else {
             inputCheckGroup.classList.remove('active');
             inputCheckGroup.querySelector(".input-check-name").style.backgroundColor = 'rgba(0, 0, 0, 0.00)';
@@ -271,13 +256,11 @@ document.getElementById('mode-switch-mobile').addEventListener('click', function
 document.querySelector('.top-lang').addEventListener('click', function (e) {
     var langBtn = this;
     var langItems = document.querySelector('.top-lang-items');
-    console.log("PASHOL NAHUY FIRST");
 
     if (!langItems.contains(e.target)) {
         e.preventDefault();
         e.stopPropagation();
         if (!langBtn.classList.contains('active')) {
-            console.log("PASHOL NAHUY");
             langBtn.classList.add('active');
             langItems.style.display = 'block';
             if (getWindowWidth() < 768) {
@@ -383,10 +366,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть вертикаль.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите вертикаль.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select vertical.');
                 break;
         }
         return;
@@ -399,10 +382,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть ГЕО.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите ГЕО.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select a GEO.');
                 break;
         }
         return;
@@ -415,10 +398,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть мову.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите язык.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select a language.');
                 break;
         }
         return;
@@ -431,10 +414,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть джерело трафіку.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите источник трафика.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select a traffic source.');
                 break;
         }
         return;
@@ -447,10 +430,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть розмір креативу.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите размер креатива.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select creative size.');
                 break;
         }
         return;
@@ -463,10 +446,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть тривалість креативу.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите продолжительность креатива.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select a creative duration.');
                 break;
         }
         return;
@@ -480,10 +463,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть тему креативу.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите тему креатива.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select a creative theme.');
                 break;
         }
         return;
@@ -497,10 +480,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть тип гри.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите тип игры.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select a game type.');
                 break;
         }
         return;
@@ -513,10 +496,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть операційну систему.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите операционную систему.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select an operating system.');
                 break;
         }
         return;
@@ -529,10 +512,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть чи показувати емоції виграшу.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите показывать ли эмоции выигрыша.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select whether to show win emotions.');
                 break;
         }
         return;
@@ -545,10 +528,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть чи показувати скрін банкінгу.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите показывать ли скрин банкинга.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select whether to show the banking screen.');
                 break;
         }
         return;
@@ -561,10 +544,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть чи показувати Push-Up сповіщення.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите показывать ли Push-Up оповещения.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select whether to show Push-Up notifications.');
                 break;
         }
         return;
@@ -577,10 +560,10 @@ function getInput() {
                 showPopup('Помилка! Введіть посилання на додаток.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Введите ссылку на приложение.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Enter the link to the app.');
                 break;
         }
         return;
@@ -593,10 +576,10 @@ function getInput() {
                 showPopup('Помилка! Введіть посилання на оффер.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Введите ссылку на оффер.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Enter the link to the offer.');
                 break;
         }
         return;
@@ -609,10 +592,10 @@ function getInput() {
                 showPopup('Помилка! Виберіть термін виконання.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Выберите срок выполнения.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Select a deadline.');
                 break;
         }
         return;
@@ -627,10 +610,10 @@ function getInput() {
                 showPopup('Помилка! Введіть телеграм @username.');
                 break;
             case 'ru':
-                showPopup();
+                showPopup('Ошибка! Введите телеграм @username.');
                 break;
             case 'en':
-                showPopup();
+                showPopup('Error! Enter the telegram @username.');
                 break;
         }
         return;
