@@ -148,13 +148,13 @@ function openModal() {
 
 function openSuccessModal(id) {
     var modal = document.getElementById('modalSuccess');
-    document.getElementById("order_id").innerText = "#" + id;
-    const modalContent = document.getElementById('modal-success-content');
+    // document.getElementById("order_id").innerText = "#" + id;
+    // const modalContent = document.getElementById('modal-success-content');
     modal.style.display = 'block';
 
-    var topPosition = Math.max(0, (window.innerHeight - modalContent.clientHeight) / 2 + window.pageYOffset);
+    // var topPosition = Math.max(0, (window.innerHeight - modalContent.clientHeight) / 2 + window.pageYOffset);
 
-    modalContent.style.top = topPosition + 'px';
+    // modalContent.style.top = topPosition + 'px';
 }
 
 function closeModal() {
