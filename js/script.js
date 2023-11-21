@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
             openModal();
         });
     });
+
+    openSuccessModal(15456465);
 });
 
 var x, i, j, l, ll, selElmnt, a, b, c;
@@ -131,8 +133,8 @@ function closeAllSelect(elmnt) {
 }
 
 function openModal() {
-    var modal = document.getElementById('modal');
-    const modalContent = document.getElementById('modal-content');
+    var modal = document.getElementById('modalExplain');
+    // const modalContent = document.getElementById('modal-content');
     modal.style.display = 'block';
 
     // var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -144,17 +146,31 @@ function openModal() {
     // modalContent.style.top = topPosition + 'px';
 }
 
+function openSuccessModal(id) {
+    var modal = document.getElementById('modalSuccess');
+    document.getElementById("order_id").innerText = "#" + id;
+    const modalContent = document.getElementById('modal-success-content');
+    modal.style.display = 'block';
+
+    var topPosition = Math.max(0, (window.innerHeight - modalContent.clientHeight) / 2 + window.pageYOffset);
+
+    modalContent.style.top = topPosition + 'px';
+}
+
 function closeModal() {
-    document.getElementById('modal').style.display = 'none';
+    document.getElementById('modalExplain').style.display = 'none';
+    document.getElementById('modalSuccess').style.display = 'none';
 }
 
 window.onclick = function (event) {
     console.log('Window clicked');
     var lang = document.getElementById("langSelect");
-    var modal = document.getElementById('modal');
+    var modalExplain = document.getElementById('modalExplain')
+    var modalSuccess = document.getElementById('modalSuccess')
+
     var closeBtn = document.querySelector('.close');
 
-    if (event.target === modal || event.target === closeBtn) {
+    if (event.target === modalExplain || event.target === modalSuccess || event.target === closeBtn) {
         closeModal();
     }
 
@@ -308,6 +324,20 @@ function getMultiplyActiveSelectText(elementID) {
     return texts.join(', ');
 }
 
+function getChoiceActiveSelectText(inputGroupID, inputID, selectID) {
+    const input = document.getElementById(inputID);
+    const inputGroup = document.getElementById(inputGroupID);
+    if (inputGroup.style.display == 'flex') {
+        if (!(input.value) || input.value.length < 3) {
+            return;
+        } else {
+            return input.value;
+        }
+    } else {
+        return getActiveSelectText(selectID);
+    }
+}
+
 var timeoutId;
 
 document.querySelector('.close-btn').addEventListener('click', function () {
@@ -327,7 +357,7 @@ function showPopup(text) {
     }, 3000);
 }
 
-function showSuccessPopup(){
+function showSuccessPopup() {
     const popup = document.getElementById('successPopup');
     popup.classList.add('active');
 
@@ -342,14 +372,10 @@ function closePopup(id) {
 }
 
 document.getElementById("sendButton").addEventListener('click', function () {
-    getInput("PC");
+    getInput();
 });
 
-document.getElementById("sendButtonMobile").addEventListener('click', function () {
-    getInput("Mobile");
-});
-
-function getInput(type) {
+function getInput() {
     const vertical = getActiveSelectText("verticalSelect1");
     if (!vertical) {
         switch (langValue) {
@@ -544,15 +570,35 @@ function getInput(type) {
         return;
     }
 
-    const app_link = document.getElementById("appLinkInput13").value;
-    if (app_link.length < 3) {
-        alert("App link input is empty !");
+    const app_link = getChoiceActiveSelectText("appLinkGroup", "appLinkInput13", "appLinkSelect13");
+    if (!app_link) {
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Введіть посилання на додаток.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
-    const offer = document.getElementById("offerLinkInput14").value;
-    if (offer.length < 3) {
-        alert("Offer link input is empty !");
+    const offer = getChoiceActiveSelectText("offerLinkGroup", "offerLinkInput14", "offerLinkSelect14");
+    if (!offer) {
+        switch (langValue) {
+            case 'ua':
+                showPopup('Помилка! Введіть посилання на оффер.');
+                break;
+            case 'ru':
+                showPopup();
+                break;
+            case 'en':
+                showPopup();
+                break;
+        }
         return;
     }
 
@@ -572,14 +618,8 @@ function getInput(type) {
         return;
     }
 
-    var tg_username;
 
-    if (type == "Mobile") {
-        tg_username = document.getElementById("tgUsernameInputMobile").value;
-    } else {
-        tg_username = document.getElementById("tgUsernameInput").value;
-    }
-
+    let tg_username = document.getElementById("tgUsernameInput").value;
     const usernameWithoutAt = tg_username.replace(/@/g, '');
     if (usernameWithoutAt.length < 3) {
         switch (langValue) {
@@ -594,6 +634,11 @@ function getInput(type) {
                 break;
         }
         return;
+    }
+
+    let promocode = document.getElementById("promocodeInput").value;
+    if (!promocode) {
+        promocode = '-';
     }
 
     const data = {
@@ -614,14 +659,16 @@ function getInput(type) {
         app_link: app_link,
         offer: offer,
         deadline: deadline,
-        tg_username: usernameWithoutAt
+        tg_username: usernameWithoutAt,
+        promocode: promocode
     }
 
     console.log(data);
 
     axios.post('/order.php', data)
         .then((response) => {
-            showSuccessPopup();
+            // showSuccessPopup();
+            openSuccessModal(data.id);
         })
         .catch((error) => {
             window.location.reload();
